@@ -108,7 +108,13 @@ export default function Home() {
 
       {/* About Section */}
       <section id="sobre-mi" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+        >
           <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/images/erika_about_real.jpg"
@@ -148,55 +154,85 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Services Section */}
       <section id="servicios" className="py-24 bg-stone-900 text-stone-50">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-3xl mx-auto mb-20"
+          >
             <span className="text-brand-taupe font-medium tracking-widest uppercase text-sm mb-4 block">Mi Trabajo</span>
             <h2 className="text-4xl md:text-[#25D366]xl font-bold mb-6 tracking-tight">Desde tu ser, transforma lo complejo en algo simple.</h2>
             <p className="text-stone-400 text-lg">Diseño espacios de reflexión, aprendizaje y evolución para que puedas construir tu camino con claridad y propósito.</p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Service 1 */}
-            <div className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
+            >
               <Compass className="w-10 h-10 text-brand-taupe mb-6" />
               <h3 className="text-[#25D366]xl font-bold mb-4">Mentorías 1 a 1</h3>
               <p className="text-stone-400 mb-8 flex-grow">Acompañamiento personalizado en módulos profundos: Poder Personal, El Arte de Conversar y Modelo de Negocio. Un espacio íntimo para escucharte y organizar tu verdad.</p>
               <Link href="/mentorias" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors">
                 Consultar mentorías <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </div>
+            </motion.div>
 
             {/* Service 2 */}
-            <div className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
+            >
               <Sparkles className="w-10 h-10 text-brand-taupe mb-6" />
               <h3 className="text-[#25D366]xl font-bold mb-4">Experiencias de Bienestar</h3>
               <p className="text-stone-400 mb-8 flex-grow">Desayunos con propósito, tertulias "El Arte de Envejecer", y jornadas de Trekking y Coaching ("Camino Abierto"). Pausamos para pensar y volver a vos.</p>
               <Link href="/bienestar" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors">
                 Conocer encuentros <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </div>
+            </motion.div>
 
             {/* Service 3 */}
-            <div className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
+            >
               <Users className="w-10 h-10 text-brand-taupe mb-6" />
               <h3 className="text-[#25D366]xl font-bold mb-4">Programas Grupales</h3>
               <p className="text-stone-400 mb-8 flex-grow">Inmersiones profundas como "Diseña tu Identidad" o "Aprender a Aprender". Fomentamos la escucha activa, la compasión y transformamos el enfoque automático de nuestras vidas.</p>
               <Link href="/programas" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors">
                 Ver programas <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Flagship Program Section */}
       <section className="py-24 bg-stone-100">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+        >
           <div>
             <span className="text-brand-taupe-dark font-medium tracking-widest uppercase text-sm mb-4 block" id="aprender">Programa Estrella</span>
             <h2 className="text-4xl md:text-[#25D366]xl font-bold mb-6 text-brand-olive-dark tracking-tight">Aprender a Aprender</h2>
@@ -251,21 +287,33 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Art & Reflection Section */}
       <section id="arte" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
             <span className="text-brand-taupe font-medium tracking-widest uppercase text-sm mb-4 block">Arte y Reflexión</span>
             <h2 className="text-4xl md:text-[#25D366]xl font-bold mb-6 text-brand-olive-dark tracking-tight">El lienzo como espejo del alma.</h2>
             <p className="text-stone-600 text-lg">Un espacio donde el color y la pintura se encuentran con el autodescubrimiento. A través de mis cuadros, capturo y comparto las reflexiones que nacen de cuestionar lo preestablecido.</p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 gap-16 items-start">
             {/* Pintura Contenedor */}
-            <div className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-100 aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center border border-stone-200">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-100 aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center border border-stone-200"
+            >
               <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors z-10"></div>
               {/* Aquí Erika subirá la foto de su cuadro. Por ahora un placeholder estético */}
               <div className="text-stone-400 font-medium flex flex-col items-center gap-4 p-8 text-center relative z-20 group-hover:opacity-0 transition-opacity">
@@ -280,10 +328,16 @@ export default function Home() {
                 className="object-cover opacity-0 transition-opacity duration-500"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
-            </div>
+            </motion.div>
 
             {/* Reflexión Contenedor */}
-            <div className="bg-brand-olive-50 p-8 md:p-12 rounded-2xl border border-stone-100 relative">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="bg-brand-olive-50 p-8 md:p-12 rounded-2xl border border-stone-100 relative"
+            >
               <div className="absolute top-0 right-0 p-8 opacity-10">
                 <BookOpen className="w-24 h-24 text-brand-olive-dark" />
               </div>
@@ -298,14 +352,20 @@ export default function Home() {
                 <p>Aprendí que la vida no me exige ser perfecta. Solo me pide que esté presente, y que cada miedo, si lo escucho profundamente, puede volverse motor de transformación.</p>
                 <p className="font-bold text-brand-olive-900 pt-4 border-t border-stone-200 mt-6 block">¿Cuál sería en vos ese cambio urgente si te despojaras por completo de tus miedos hoy?</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Contact Section with Form */}
       <section id="contacto" className="py-24 bg-stone-900 text-stone-50">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start"
+        >
           <div>
             <h2 className="text-4xl md:text-[#25D366]xl font-bold mb-6 text-white tracking-tight">Empecemos tu proceso.</h2>
             <p className="text-xl text-stone-400 mb-10 leading-relaxed font-light">
@@ -349,7 +409,7 @@ export default function Home() {
               </button>
             </form>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Footer */}
