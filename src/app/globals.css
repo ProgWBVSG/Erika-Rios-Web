@@ -18,6 +18,19 @@
   --color-amber-600: #d97706;
   --color-amber-900: #78350f;
 
+  /* Brand Colors */
+  --color-brand-olive: #8d9876;
+  --color-brand-olive-light: #a5ae91;
+  --color-brand-olive-dark: #6e785b;
+  --color-brand-olive-900: #4a523b;
+  --color-brand-olive-50: #f6f7f4;
+
+  --color-brand-taupe: #8c735a;
+  --color-brand-taupe-light: #a99682;
+  --color-brand-taupe-dark: #705c48;
+  --color-brand-taupe-900: #473a2e;
+  --color-brand-taupe-50: #f6f4f2;
+
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-poppins), ui-serif, Georgia, serif;
 }

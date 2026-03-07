@@ -9,7 +9,7 @@ export default function MentoriasPage() {
     return (
         <div className="bg-white min-h-screen pt-32 pb-24">
             <div className="max-w-7xl mx-auto px-6">
-                <Link href="/#servicios" className="inline-flex items-center gap-2 text-stone-500 hover:text-stone-800 transition-colors mb-12">
+                <Link href="/#servicios" className="inline-flex items-center gap-2 text-stone-500 hover:text-brand-olive-dark transition-colors mb-12">
                     <ArrowRight className="w-4 h-4 rotate-180" />
                     Volver a inicio
                 </Link>
@@ -21,10 +21,10 @@ export default function MentoriasPage() {
                         transition={{ duration: 0.8 }}
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone-100 text-stone-700 text-sm font-medium mb-6">
-                            <Sparkles className="w-4 h-4 text-amber-500" />
+                            <Sparkles className="w-4 h-4 text-brand-taupe" />
                             <span>Proceso Profundo</span>
                         </div>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-stone-900 mb-6">
+                        <h1 className="text-4xl md:text-[#25D366]xl lg:text-[#25D366]xl font-bold tracking-tight text-brand-olive-900 mb-6">
                             Mentorías 1 a 1
                         </h1>
                         <p className="text-xl text-stone-600 leading-relaxed mb-8">
@@ -32,22 +32,22 @@ export default function MentoriasPage() {
                         </p>
 
                         <div className="space-y-8 mt-12">
-                            <div className="bg-stone-50 p-8 rounded-2xl border border-stone-100">
-                                <h3 className="text-xl font-bold text-stone-900 mb-3">Módulo 1: Poder Personal</h3>
+                            <div className="bg-brand-olive-50 p-8 rounded-2xl border border-stone-100">
+                                <h3 className="text-xl font-bold text-brand-olive-900 mb-3">Módulo 1: Poder Personal</h3>
                                 <p className="text-stone-600">Reconoce tus recursos internos, gestiona tus emociones y establece límites sanos para liderar tu vida desde la autenticidad.</p>
                             </div>
-                            <div className="bg-stone-50 p-8 rounded-2xl border border-stone-100">
-                                <h3 className="text-xl font-bold text-stone-900 mb-3">Módulo 2: El Arte de Conversar</h3>
+                            <div className="bg-brand-olive-50 p-8 rounded-2xl border border-stone-100">
+                                <h3 className="text-xl font-bold text-brand-olive-900 mb-3">Módulo 2: El Arte de Conversar</h3>
                                 <p className="text-stone-600">Desarrolla habilidades de comunicación asertiva y escucha activa para mejorar tus relaciones personales y profesionales.</p>
                             </div>
-                            <div className="bg-stone-50 p-8 rounded-2xl border border-stone-100">
-                                <h3 className="text-xl font-bold text-stone-900 mb-3">Módulo 3: Modelo de Negocio</h3>
+                            <div className="bg-brand-olive-50 p-8 rounded-2xl border border-stone-100">
+                                <h3 className="text-xl font-bold text-brand-olive-900 mb-3">Módulo 3: Modelo de Negocio</h3>
                                 <p className="text-stone-600">Estructura tu propuesta de valor y tu estrategia con un enfoque humano y sostenible a largo plazo.</p>
                             </div>
                         </div>
 
                         <div className="mt-12">
-                            <a href="https://wa.me/5493572440360?text=Hola%20Erika!%20Quiero%20consultar%20sobre%20el%20proceso%20de%20Mentor%C3%ADas%201%20a%201." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-stone-900 text-white px-8 py-4 rounded-full font-medium hover:bg-stone-800 transition-colors shadow-xl w-full sm:w-auto">
+                            <a href="https://wa.me/5493572440360?text=Hola%20Erika!%20Quiero%20consultar%20sobre%20el%20proceso%20de%20Mentor%C3%ADas%201%20a%201." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-brand-olive-dark text-white px-8 py-4 rounded-full font-medium hover:bg-brand-olive transition-colors shadow-xl w-full sm:w-auto">
                                 Consultar disponibilidad
                                 <ArrowRight className="w-4 h-4" />
                             </a>
@@ -65,7 +65,7 @@ export default function MentoriasPage() {
                             <span className="text-stone-400 font-medium tracking-widest uppercase">Fotografía Mentoría</span>
                         </div>
                         <Image
-                            src="/images/placeholder_mentoria.jpg"
+                            src="/images/mentoria_img.jpg"
                             alt="Sesión de Mentoría 1 a 1"
                             fill
                             className="object-cover"
