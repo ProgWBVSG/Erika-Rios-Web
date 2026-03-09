@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Erika Ríos - Coach Ontológico",
+  title: "Erika Rios - Coach Ontológico",
   description: "Acompaño tu proceso para detener el piloto automático e integrar consciencia, cuerpo y arte.",
 };
 

@@ -97,7 +97,7 @@ export default function Home() {
           >
             <Image
               src="/images/erika_hero_real.jpg"
-              alt="Erika Ríos - Portada"
+              alt="Erika Rios - Portada"
               fill
               className="object-cover object-top"
               priority
@@ -118,7 +118,7 @@ export default function Home() {
           <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/images/erika_about_real.jpg"
-              alt="Erika Ríos"
+              alt="Erika Rios"
               fill
               className="object-cover object-top"
             />
@@ -127,13 +127,13 @@ export default function Home() {
             <span className="text-brand-taupe-dark font-medium tracking-widest uppercase text-sm mb-4 block">Sobre mí</span>
             <h2 className="text-4xl md:text-[#25D366]xl font-bold mb-8 text-brand-olive-900 tracking-tight">Bienvenida consciencia</h2>
             <div className="space-y-6 text-lg text-stone-600 leading-relaxed">
-              <p>Soy Erika Ríos, creadora de Bienvenida Consciencia. Mi enfoque es disruptivo y está orientado a acompañar a quienes buscan trascender sus límites y explorar su autenticidad.</p>
+              <p>Soy Erika Rios, creadora de Bienvenida Consciencia. Mi enfoque es disruptivo y está orientado a acompañar a quienes buscan trascender sus límites y explorar su autenticidad.</p>
               <p>Combino coaching, mentoría y reflexión estratégica para acompañar a la industria de personas que asisten a otros, líderes y profesionales en procesos de transformación profunda, reconectándolos con su esencia.</p>
               <p>Mi propuesta es clara: fomentar un <strong>liderazgo audaz</strong>. Desafiar lo establecido, tomar decisiones desde la intuición y animarse a liderar sin miedo a transformarse a uno mismo.</p>
 
               <blockquote className="border-l-4 border-brand-taupe pl-6 my-8 py-2">
                 <p className="text-xl text-brand-olive-dark font-serif italic mb-2">"Enciende tu luz interior y compartila con los demás, abandonando la ilusión de control."</p>
-                <footer className="text-sm font-bold text-stone-500">— Erika Ríos</footer>
+                <footer className="text-sm font-bold text-stone-500">— Erika Rios</footer>
               </blockquote>
 
               <div className="pt-8 mt-8 border-t border-stone-100 flex flex-col sm:flex-row gap-6 sm:items-center">
@@ -416,7 +416,7 @@ export default function Home() {
       <footer className="bg-stone-950 text-stone-500 py-12 text-center border-t border-stone-800">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-6">
           <span className="text-xl font-bold tracking-tighter text-stone-300">ERIKA RÍOS</span>
-          <p>© 2026 Erika Ríos Consulting. Todos los derechos reservados.</p>
+          <p>© 2026 Erika Rios Consulting. Todos los derechos reservados.</p>
         </div>
       </footer>
 
