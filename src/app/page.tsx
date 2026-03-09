@@ -132,7 +132,7 @@ export default function Home() {
               <p>Mi propuesta es clara: fomentar un <strong>liderazgo audaz</strong>. Desafiar lo establecido, tomar decisiones desde la intuición y animarse a liderar sin miedo a transformarse a uno mismo.</p>
 
               <blockquote className="border-l-4 border-brand-taupe pl-6 my-8 py-2">
-                <p className="text-xl text-brand-olive-dark font-serif italic mb-2">"Enciende tu luz interior y compartila con los demás, abandonando la ilusión de control."</p>
+                <p className="text-xl text-brand-olive-dark font-serif italic mb-2">"El impacto genuino no nace de la fuerza, sino de la presencia. Suelta la carga de controlarlo todo, enciende tu luz y transfórmate en la inspiración que tu entorno necesita hoy."</p>
                 <footer className="text-sm font-bold text-stone-500">— Erika Rios</footer>
               </blockquote>
 
