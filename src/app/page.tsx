@@ -120,7 +120,7 @@ export default function Home() {
               src="/images/erika_about_real.jpg"
               alt="Erika Rios"
               fill
-              className="object-cover object-center"
+              className="object-cover object-[center_70%]"
             />
           </div>
           <div>
