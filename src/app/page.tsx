@@ -99,7 +99,7 @@ export default function Home() {
               src="/images/erika_hero_real.jpg"
               alt="Erika Rios - Portada"
               fill
-              className="object-cover object-bottom"
+              className="object-cover object-top"
               priority
             />
           </motion.div>
@@ -120,7 +120,7 @@ export default function Home() {
               src="/images/erika_about_real.jpg"
               alt="Erika Rios"
               fill
-              className="object-cover object-top"
+              className="object-cover object-center"
             />
           </div>
           <div>
