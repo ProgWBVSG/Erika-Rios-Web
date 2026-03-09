@@ -31,20 +31,46 @@ export default function MentoriasPage() {
                             Acompañamiento personalizado en módulos profundos: Poder Personal, El Arte de Conversar y Modelo de Negocio. Un espacio íntimo para escucharte y organizar tu verdad.
                         </p>
 
-                        <div className="space-y-8 mt-12">
+                        <p className="text-sm text-stone-500 italic mt-2 mb-6">Cada módulo es independiente del otro.</p>
+
+                        <div className="space-y-6 mt-8">
                             <div className="bg-brand-olive-50 p-8 rounded-2xl border border-stone-100">
-                                <h3 className="text-xl font-bold text-brand-olive-900 mb-3">Módulo 1: Poder Personal</h3>
-                                <p className="text-stone-600">Reconoce tus recursos internos, gestiona tus emociones y establece límites sanos para liderar tu vida desde la autenticidad.</p>
+                                <div className="flex items-center gap-3 mb-3">
+                                    <span className="w-8 h-8 rounded-full bg-brand-taupe-light flex items-center justify-center text-brand-olive-dark font-bold text-sm shrink-0">1</span>
+                                    <h3 className="text-xl font-bold text-brand-olive-900">Poder Personal</h3>
+                                </div>
+                                <p className="text-sm text-brand-taupe-dark font-medium mb-2">4 encuentros · 1½ h c/u · Teórico/práctico</p>
+                                <p className="text-stone-600">Te permite reconocer tus recursos internos, reflexionar en relación a tu inteligencia emocional y establecer límites sanos para liderar tu vida desde la autenticidad.</p>
                             </div>
+
                             <div className="bg-brand-olive-50 p-8 rounded-2xl border border-stone-100">
-                                <h3 className="text-xl font-bold text-brand-olive-900 mb-3">Módulo 2: El Arte de Conversar</h3>
-                                <p className="text-stone-600">Desarrolla habilidades de comunicación asertiva y escucha activa para mejorar tus relaciones personales y profesionales.</p>
+                                <div className="flex items-center gap-3 mb-3">
+                                    <span className="w-8 h-8 rounded-full bg-brand-taupe-light flex items-center justify-center text-brand-olive-dark font-bold text-sm shrink-0">2</span>
+                                    <h3 className="text-xl font-bold text-brand-olive-900">Conversaciones para la Acción</h3>
+                                </div>
+                                <p className="text-sm text-brand-taupe-dark font-medium mb-2">4 encuentros · 1½ h c/u · Teórico/práctico</p>
+                                <p className="text-stone-600">Te permite revisar tus habilidades para una conversación asertiva y potenciar habilidades desde la comunicación no violenta, lo que permite mejorar la calidad de tus relaciones personales y profesionales.</p>
                             </div>
+
                             <div className="bg-brand-olive-50 p-8 rounded-2xl border border-stone-100">
-                                <h3 className="text-xl font-bold text-brand-olive-900 mb-3">Módulo 3: Modelo de Negocio</h3>
-                                <p className="text-stone-600">Estructura tu propuesta de valor y tu estrategia con un enfoque humano y sostenible a largo plazo.</p>
+                                <div className="flex items-center gap-3 mb-3">
+                                    <span className="w-8 h-8 rounded-full bg-brand-taupe-light flex items-center justify-center text-brand-olive-dark font-bold text-sm shrink-0">3</span>
+                                    <h3 className="text-xl font-bold text-brand-olive-900">Gestión del Tiempo</h3>
+                                </div>
+                                <p className="text-sm text-brand-taupe-dark font-medium mb-2">3 encuentros · 1½ h c/u</p>
+                                <p className="text-stone-600">Te permite organizar y gestionar tanto el tiempo y las tareas como también tus espacios, para encontrar un equilibrio que te acerque a mejorar la productividad y el enfoque.</p>
+                            </div>
+
+                            <div className="bg-brand-olive-50 p-8 rounded-2xl border border-stone-100">
+                                <div className="flex items-center gap-3 mb-3">
+                                    <span className="w-8 h-8 rounded-full bg-brand-taupe-light flex items-center justify-center text-brand-olive-dark font-bold text-sm shrink-0">4</span>
+                                    <h3 className="text-xl font-bold text-brand-olive-900">Negociación para Emprendedores con Sentido</h3>
+                                </div>
+                                <p className="text-sm text-brand-taupe-dark font-medium mb-2">4 encuentros · 1½ h c/u</p>
+                                <p className="text-stone-600">Herramientas y estrategias de negociación con propósito, orientadas a emprendedores que quieren crecer sin perder su esencia ni sus valores.</p>
                             </div>
                         </div>
+
 
                         <div className="mt-12">
                             <a href="https://wa.me/5493572440360?text=Hola%20Erika!%20Quiero%20consultar%20sobre%20el%20proceso%20de%20Mentor%C3%ADas%201%20a%201." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-brand-olive-dark text-white px-8 py-4 rounded-full font-medium hover:bg-brand-olive transition-colors shadow-xl w-full sm:w-auto">
