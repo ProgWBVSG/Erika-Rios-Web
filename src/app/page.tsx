@@ -71,7 +71,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-[#25D366]xl md:text-[#25D366]xl lg:text-7xl font-bold tracking-tighter leading-[1.05] mb-6 text-brand-olive-900">
-              Liderazgo evolutivo y consciencia audaz.
+              Liderazgo audaz y consciencia evolutiva.
             </h1>
 
             <p className="text-lg text-stone-600 mb-10 leading-relaxed max-w-lg">
@@ -99,7 +99,7 @@ export default function Home() {
               src="/images/erika_hero_real.jpg"
               alt="Erika Rios - Portada"
               fill
-              className="object-cover object-top"
+              className="object-cover object-bottom"
               priority
             />
           </motion.div>
@@ -128,7 +128,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-[#25D366]xl font-bold mb-8 text-brand-olive-900 tracking-tight">Bienvenida consciencia</h2>
             <div className="space-y-6 text-lg text-stone-600 leading-relaxed">
               <p>Soy Erika Rios, creadora de Bienvenida Consciencia. Mi enfoque es disruptivo y está orientado a acompañar a quienes buscan trascender sus límites y explorar su autenticidad.</p>
-              <p>Combino coaching, mentoría y reflexión estratégica para acompañar a la industria de personas que asisten a otros, líderes y profesionales en procesos de transformación profunda, reconectándolos con su esencia.</p>
+              <p>Combino coaching, mentorías y talleres de aprendizaje para acompañar a la industria de personas que asisten a otros. Líderes y profesionales en procesos de transformación profunda, reconectándolos con su esencia.</p>
               <p>Mi propuesta es clara: fomentar un <strong>liderazgo audaz</strong>. Desafiar lo establecido, tomar decisiones desde la intuición y animarse a liderar sin miedo a transformarse a uno mismo.</p>
 
               <blockquote className="border-l-4 border-brand-taupe pl-6 my-8 py-2">
@@ -417,6 +417,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-6">
           <span className="text-xl font-bold tracking-tighter text-stone-300">ERIKA RIOS</span>
           <p>© 2026 Erika Rios Consulting. Todos los derechos reservados.</p>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="mt-2 px-5 py-2 border border-stone-700 rounded-full text-sm text-stone-400 hover:bg-stone-800 hover:text-stone-200 transition-all"
+          >
+            ↑ Volver al inicio
+          </button>
         </div>
       </footer>
 
