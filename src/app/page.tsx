@@ -44,7 +44,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed w-full z-50 top-0 border-b border-stone-200/50 bg-brand-olive-50/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <span className="text-xl font-bold tracking-tighter text-brand-olive-dark">ERIKA RÍOS</span>
+          <span className="text-xl font-bold tracking-tighter text-brand-olive-dark">ERIKA RIOS</span>
           <div className="hidden md:flex gap-8 text-sm font-medium text-stone-600">
             <a href="#sobre-mi" className="hover:text-brand-taupe-dark transition-colors">Sobre mí</a>
             <a href="#servicios" className="hover:text-brand-taupe-dark transition-colors">Servicios</a>
@@ -415,7 +415,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-stone-950 text-stone-500 py-12 text-center border-t border-stone-800">
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-6">
-          <span className="text-xl font-bold tracking-tighter text-stone-300">ERIKA RÍOS</span>
+          <span className="text-xl font-bold tracking-tighter text-stone-300">ERIKA RIOS</span>
           <p>© 2026 Erika Rios Consulting. Todos los derechos reservados.</p>
         </div>
       </footer>
