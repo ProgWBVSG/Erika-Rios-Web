@@ -183,7 +183,7 @@ export default function Home() {
             >
               <Compass className="w-10 h-10 text-brand-taupe mb-6" />
               <h3 className="text-[#25D366]xl font-bold mb-4">Mentorías 1 a 1</h3>
-              <p className="text-stone-400 mb-8 flex-grow">Acompañamiento personalizado en módulos profundos: Poder Personal, El Arte de Conversar y Modelo de Negocio. Un espacio íntimo para escucharte y organizar tu verdad.</p>
+              <p className="text-stone-400 mb-8 flex-grow">Poder personal, conversaciones para la acción, gestión del tiempo, negociación para emprendedores con sentido. Un espacio íntimo para escucharte y organizar tu verdad.</p>
               <Link href="/mentorias" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors">
                 Consultar mentorías <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -199,7 +199,7 @@ export default function Home() {
             >
               <Sparkles className="w-10 h-10 text-brand-taupe mb-6" />
               <h3 className="text-[#25D366]xl font-bold mb-4">Experiencias de Bienestar</h3>
-              <p className="text-stone-400 mb-8 flex-grow">Desayunos con propósito, tertulias "El Arte de Envejecer", y jornadas de Trekking y Coaching ("Camino Abierto"). Pausamos para pensar y volver a vos.</p>
+              <p className="text-stone-400 mb-8 flex-grow">Desayunos y Meriendas propósito, tertulia entre colegas: "El arte de envejecer", jornadas al aire libre. Pausamos para reflexionar y volver a uno mismo siendo parte fundamental de un sistema.</p>
               <Link href="/bienestar" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors">
                 Conocer encuentros <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
