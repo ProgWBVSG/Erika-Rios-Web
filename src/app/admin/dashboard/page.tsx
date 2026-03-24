@@ -80,7 +80,10 @@ export default async function DashboardPage() {
                      </p>
                   </div>
                 </div>
-                <div className="flex gap-2 self-end sm:self-auto">
+                <div className="flex gap-2 self-end sm:self-auto items-center">
+                  <Link href={`/admin/dashboard/edit/${post.id}`} className="text-indigo-600 hover:text-indigo-900 border border-indigo-200 rounded px-3 py-1 text-sm bg-indigo-50 cursor-pointer">
+                    Editar
+                  </Link>
                   <form action={deletePost}>
                     <input type="hidden" name="id" value={post.id} />
                     <button type="submit" className="text-red-600 hover:text-red-900 border border-red-200 rounded px-3 py-1 text-sm bg-red-50 cursor-pointer">Borrar</button>
