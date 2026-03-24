@@ -6,9 +6,20 @@ export async function updateSession(request: NextRequest) {
     request,
   })
 
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  if (!supabaseUrl || !supabaseKey) {
+    // Si faltan las variables en Vercel, no rompas todo el sitio público.
+    if (request.nextUrl.pathname.startsWith('/admin')) {
+       return new NextResponse("¡Error! Faltan las variables de entorno de Supabase en Vercel. Entra a Vercel > Settings > Environment Variables y añádelas.", { status: 500 })
+    }
+    return supabaseResponse
+  }
+
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseUrl,
+    supabaseKey,
     {
       cookies: {
         getAll() {
