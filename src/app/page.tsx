@@ -339,6 +339,8 @@ export default function Home() {
                       src={post.image_url}
                       alt={post.title}
                       fill
+                      unoptimized
+                      quality={100}
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </motion.div>
