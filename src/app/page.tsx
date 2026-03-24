@@ -5,10 +5,28 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, ArrowRight, BookOpen, Users, Compass, HelpCircle, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { createClient } from "@/utils/supabase/client";
 
 export default function Home() {
   const [isFaqOpen, setIsFaqOpen] = useState(false);
   const [openQuestionIndex, setOpenQuestionIndex] = useState<number | null>(0);
+  const [posts, setPosts] = useState<any[]>([]);
+
+  // Fetch posts from Supabase
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const supabase = createClient();
+      const { data } = await supabase
+        .from('posts')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      if (data) {
+        setPosts(data);
+      }
+    };
+    fetchPosts();
+  }, []);
 
   // Abrir automáticamente después de 30 segundos
   useEffect(() => {
@@ -305,54 +323,83 @@ export default function Home() {
             <p className="text-stone-600 text-lg">Un espacio donde el color y la pintura se encuentran con el autodescubrimiento. A través de mis cuadros, capturo y comparto las reflexiones que nacen de cuestionar lo preestablecido.</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            {/* Pintura Contenedor */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-100 aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center border border-stone-200"
-            >
-              <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-              {/* Aquí Erika subirá la foto de su cuadro. Por ahora un placeholder estético */}
-              <div className="text-stone-400 font-medium flex flex-col items-center gap-4 p-8 text-center relative z-20 group-hover:opacity-0 transition-opacity">
-                <Sparkles className="w-8 h-8 opacity-50" />
-                <p>Erika: Podrás subir la foto de tu pintura aquí</p>
-                <span className="text-sm opacity-60">"Confía que donde estás es donde debes estar"</span>
-              </div>
-              <Image
-                src="/images/placeholder_art.jpg"
-                alt="Cuadro: Confía que donde estás es donde debes estar"
-                fill
-                className="object-cover opacity-0 transition-opacity duration-500"
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-              />
-            </motion.div>
+          <div className="grid md:grid-cols-1 gap-24 items-start">
+            {posts.length > 0 ? (
+              posts.map((post, idx) => (
+                <div key={post.id} className="grid md:grid-cols-2 gap-16 items-start">
+                  {/* Pintura Contenedor */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-100 aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center border border-stone-200"
+                  >
+                    <Image
+                      src={post.image_url}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </motion.div>
 
-            {/* Reflexión Contenedor */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-brand-olive-50 p-8 md:p-12 rounded-2xl border border-stone-100 relative"
-            >
-              <div className="absolute top-0 right-0 p-8 opacity-10">
-                <BookOpen className="w-24 h-24 text-brand-olive-dark" />
-              </div>
-              <h3 className="text-[#25D366]xl font-bold text-brand-olive-900 mb-6 italic font-serif">"Confía que donde estás es donde debés estar."</h3>
-              <div className="space-y-4 text-stone-600 leading-relaxed relative z-10">
-                <p>¿Qué tanto confiamos cuando estamos atravesados por miedos? Miedos que se disfrazan de exigencias:</p>
-                <ul className="list-disc pl-5 space-y-2 text-stone-700">
-                  <li>Las expectativas de mamá, papá, pareja, hijos.</li>
-                  <li>La presión laboral y la "obligación" de ser infalibles.</li>
-                  <li>El miedo a perder nuestro falso lugar seguro.</li>
-                </ul>
-                <p>Aprendí que la vida no me exige ser perfecta. Solo me pide que esté presente, y que cada miedo, si lo escucho profundamente, puede volverse motor de transformación.</p>
-                <p className="font-bold text-brand-olive-900 pt-4 border-t border-stone-200 mt-6 block">¿Cuál sería en vos ese cambio urgente si te despojaras por completo de tus miedos hoy?</p>
-              </div>
-            </motion.div>
+                  {/* Reflexión Contenedor */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="bg-brand-olive-50 p-8 md:p-12 rounded-2xl border border-stone-100 relative h-full flex flex-col justify-center"
+                  >
+                    <div className="absolute top-0 right-0 p-8 opacity-10">
+                      <BookOpen className="w-24 h-24 text-brand-olive-dark" />
+                    </div>
+                    <h3 className="text-[#25D366]xl font-bold text-brand-olive-900 mb-6 italic font-serif">"{post.title}"</h3>
+                    <div className="space-y-4 text-stone-600 leading-relaxed relative z-10 whitespace-pre-wrap">
+                      {post.reflection}
+                    </div>
+                    <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-400">
+                      Publicado el {new Date(post.published_at).toLocaleDateString()}
+                    </div>
+                  </motion.div>
+                </div>
+              ))
+            ) : (
+                <div className="grid md:grid-cols-2 gap-16 items-start">
+                  {/* Placeholder si no hay posts */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-100 aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center border border-stone-200"
+                  >
+                    <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <div className="text-stone-400 font-medium flex flex-col items-center gap-4 p-8 text-center relative z-20 group-hover:opacity-0 transition-opacity">
+                      <Sparkles className="w-8 h-8 opacity-50" />
+                      <p>Aún no hay obras publicadas</p>
+                      <span className="text-sm opacity-60">"Pronto verás aquí mis nuevas creaciones"</span>
+                    </div>
+                  </motion.div>
+
+                  {/* Placeholder Reflexión */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="bg-brand-olive-50 p-8 md:p-12 rounded-2xl border border-stone-100 relative h-full flex flex-col justify-center"
+                  >
+                    <div className="absolute top-0 right-0 p-8 opacity-10">
+                      <BookOpen className="w-24 h-24 text-brand-olive-dark" />
+                    </div>
+                    <h3 className="text-[#25D366]xl font-bold text-stone-400 mb-6 italic font-serif">Proximamente...</h3>
+                    <div className="space-y-4 text-stone-400 leading-relaxed relative z-10">
+                      <p>Las reflexiones y obras irán apareciendo en este espacio a medida que la artista las publique desde su panel de control.</p>
+                    </div>
+                  </motion.div>
+                </div>
+            )}
           </div>
         </div>
       </section>
