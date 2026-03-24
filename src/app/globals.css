@@ -50,6 +50,14 @@
   h6 {
     font-family: var(--font-serif);
   }
+
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"],
+  [role="button"] {
+    cursor: pointer;
+  }
 }
 
 /* Custom scrollbar and utilities for the aesthetic */
