@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, ArrowRight, BookOpen, Users, Compass, HelpCircle, X, ChevronDown } from "lucide-react";
+import { Sparkles, ArrowRight, BookOpen, Users, Compass, HelpCircle, X, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { createClient } from "@/utils/supabase/client";
@@ -11,6 +11,7 @@ export default function Home() {
   const [isFaqOpen, setIsFaqOpen] = useState(false);
   const [openQuestionIndex, setOpenQuestionIndex] = useState<number | null>(0);
   const [posts, setPosts] = useState<any[]>([]);
+  const [currentPostIndex, setCurrentPostIndex] = useState(0);
 
   // Fetch posts from Supabase
   useEffect(() => {
@@ -323,79 +324,87 @@ export default function Home() {
             <p className="text-stone-600 text-lg">Un espacio donde el color y la pintura se encuentran con el autodescubrimiento. A través de mis cuadros, capturo y comparto las reflexiones que nacen de cuestionar lo preestablecido.</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-1 gap-12 items-start">
-            {posts.length > 0 ? (
-              posts.map((post, idx) => (
-                <div key={post.id} className="grid md:grid-cols-2 gap-10 items-stretch">
-                  {/* Pintura Contenedor */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-50 h-[420px] border border-stone-200"
+          {posts.length > 0 ? (
+            <div className="relative">
+              {/* Flechas navegación – solo si hay más de 1 post */}
+              {posts.length > 1 && (
+                <>
+                  <button
+                    onClick={() => setCurrentPostIndex(i => (i - 1 + posts.length) % posts.length)}
+                    className="absolute -left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border border-stone-200 shadow-md flex items-center justify-center hover:bg-brand-olive-50 transition-colors"
+                    aria-label="Anterior"
                   >
-                    <Image
-                      src={post.image_url}
-                      alt={post.title}
-                      fill
-                      unoptimized
-                      quality={100}
-                      className="object-contain transition-transform duration-700 group-hover:scale-105 p-2"
-                    />
-                  </motion.div>
+                    <ChevronLeft className="w-5 h-5 text-brand-olive-dark" />
+                  </button>
+                  <button
+                    onClick={() => setCurrentPostIndex(i => (i + 1) % posts.length)}
+                    className="absolute -right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white border border-stone-200 shadow-md flex items-center justify-center hover:bg-brand-olive-50 transition-colors"
+                    aria-label="Siguiente"
+                  >
+                    <ChevronRight className="w-5 h-5 text-brand-olive-dark" />
+                  </button>
+                </>
+              )}
 
-                  {/* Reflexión Contenedor */}
-                  <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="bg-brand-olive-50 p-6 md:p-8 rounded-2xl border border-stone-100 relative flex flex-col h-[380px]"
-                  >
-                    <div className="absolute top-0 right-0 p-6 opacity-10">
-                      <BookOpen className="w-16 h-16 text-brand-olive-dark" />
-                    </div>
-                    <h3 className="text-lg font-bold text-brand-olive-900 mb-3 italic font-serif shrink-0">"{post.title}"</h3>
-                    <div className="overflow-y-auto flex-1 pr-2 space-y-3 text-stone-600 text-sm leading-relaxed relative z-10 whitespace-pre-wrap scrollbar-thin scrollbar-thumb-stone-300 scrollbar-track-transparent">
-                      {post.reflection}
-                    </div>
-                    <div className="mt-3 pt-3 border-t border-stone-200 text-xs text-stone-400 shrink-0">
-                      Publicado el {new Date(post.published_at).toLocaleDateString()}
-                    </div>
-                  </motion.div>
-                </div>
-              ))
-            ) : (
-                <div className="grid md:grid-cols-2 gap-10 items-stretch">
-                  {/* Placeholder si no hay posts */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-100 h-[380px] flex items-center justify-center border border-stone-200"
-                  >
-                    <div className="text-stone-400 font-medium flex flex-col items-center gap-4 p-8 text-center">
-                      <Sparkles className="w-8 h-8 opacity-50" />
-                      <p>Aún no hay obras publicadas</p>
-                    </div>
-                  </motion.div>
+              <AnimatePresence mode="wait">
+                {(() => {
+                  const post = posts[currentPostIndex];
+                  return (
+                    <motion.div
+                      key={post.id}
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -30 }}
+                      transition={{ duration: 0.4 }}
+                      className="grid md:grid-cols-2 gap-10 items-stretch"
+                    >
+                      {/* Pintura */}
+                      <div className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-50 h-[420px] border border-stone-200">
+                        <Image
+                          src={post.image_url}
+                          alt={post.title}
+                          fill
+                          unoptimized
+                          quality={100}
+                          className="object-contain transition-transform duration-700 group-hover:scale-105 p-2"
+                        />
+                      </div>
 
-                  {/* Placeholder Reflexión */}
-                  <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    className="bg-brand-olive-50 p-6 md:p-8 rounded-2xl border border-stone-100 relative h-[380px] flex flex-col justify-center"
-                  >
-                    <h3 className="text-lg font-bold text-stone-400 mb-4 italic font-serif">Proximamente...</h3>
-                    <p className="text-stone-400 text-sm leading-relaxed">Las reflexiones y obras irán apareciendo en este espacio a medida que la artista las publique desde su panel de control.</p>
-                  </motion.div>
+                      {/* Reflexión */}
+                      <div className="bg-brand-olive-50 p-6 md:p-8 rounded-2xl border border-stone-100 relative flex flex-col h-[420px]">
+                        <div className="absolute top-0 right-0 p-6 opacity-10">
+                          <BookOpen className="w-16 h-16 text-brand-olive-dark" />
+                        </div>
+                        <h3 className="text-lg font-bold text-brand-olive-900 mb-3 italic font-serif shrink-0">"{post.title}"</h3>
+                        <div className="overflow-y-auto flex-1 pr-2 space-y-3 text-stone-600 text-sm leading-relaxed relative z-10 whitespace-pre-wrap">
+                          {post.reflection}
+                        </div>
+                        <div className="mt-3 pt-3 border-t border-stone-200 text-xs text-stone-400 shrink-0 flex items-center justify-between">
+                          <span>Publicado el {new Date(post.published_at).toLocaleDateString()}</span>
+                          {posts.length > 1 && (
+                            <span className="font-medium">{currentPostIndex + 1} / {posts.length}</span>
+                          )}
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })()}
+              </AnimatePresence>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-10 items-stretch">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-stone-100 h-[380px] flex items-center justify-center border border-stone-200">
+                <div className="text-stone-400 font-medium flex flex-col items-center gap-4 p-8 text-center">
+                  <Sparkles className="w-8 h-8 opacity-50" />
+                  <p>Aún no hay obras publicadas</p>
                 </div>
-            )}
-          </div>
+              </div>
+              <div className="bg-brand-olive-50 p-6 md:p-8 rounded-2xl border border-stone-100 h-[380px] flex flex-col justify-center">
+                <h3 className="text-lg font-bold text-stone-400 mb-4 italic font-serif">Proximamente...</h3>
+                <p className="text-stone-400 text-sm leading-relaxed">Las reflexiones y obras irán apareciendo en este espacio a medida que la artista las publique desde su panel de control.</p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
