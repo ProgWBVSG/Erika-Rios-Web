@@ -333,7 +333,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-100 h-[380px] border border-stone-200"
+                    className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-50 h-[420px] border border-stone-200"
                   >
                     <Image
                       src={post.image_url}
@@ -341,7 +341,7 @@ export default function Home() {
                       fill
                       unoptimized
                       quality={100}
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-contain transition-transform duration-700 group-hover:scale-105 p-2"
                     />
                   </motion.div>
 
