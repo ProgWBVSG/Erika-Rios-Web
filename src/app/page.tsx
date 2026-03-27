@@ -309,7 +309,7 @@ export default function Home() {
       </section>
 
       {/* Art & Reflection Section */}
-      <section id="arte" className="py-24 bg-white">
+      <section id="arte" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -323,17 +323,17 @@ export default function Home() {
             <p className="text-stone-600 text-lg">Un espacio donde el color y la pintura se encuentran con el autodescubrimiento. A través de mis cuadros, capturo y comparto las reflexiones que nacen de cuestionar lo preestablecido.</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-1 gap-24 items-start">
+          <div className="grid md:grid-cols-1 gap-12 items-start">
             {posts.length > 0 ? (
               posts.map((post, idx) => (
-                <div key={post.id} className="grid md:grid-cols-2 gap-16 items-start">
+                <div key={post.id} className="grid md:grid-cols-2 gap-10 items-stretch">
                   {/* Pintura Contenedor */}
                   <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-100 aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center border border-stone-200"
+                    className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-100 h-[380px] border border-stone-200"
                   >
                     <Image
                       src={post.image_url}
@@ -351,36 +351,34 @@ export default function Home() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="bg-brand-olive-50 p-8 md:p-12 rounded-2xl border border-stone-100 relative h-full flex flex-col justify-center"
+                    className="bg-brand-olive-50 p-6 md:p-8 rounded-2xl border border-stone-100 relative flex flex-col h-[380px]"
                   >
-                    <div className="absolute top-0 right-0 p-8 opacity-10">
-                      <BookOpen className="w-24 h-24 text-brand-olive-dark" />
+                    <div className="absolute top-0 right-0 p-6 opacity-10">
+                      <BookOpen className="w-16 h-16 text-brand-olive-dark" />
                     </div>
-                    <h3 className="text-[#25D366]xl font-bold text-brand-olive-900 mb-6 italic font-serif">"{post.title}"</h3>
-                    <div className="space-y-4 text-stone-600 leading-relaxed relative z-10 whitespace-pre-wrap">
+                    <h3 className="text-lg font-bold text-brand-olive-900 mb-3 italic font-serif shrink-0">"{post.title}"</h3>
+                    <div className="overflow-y-auto flex-1 pr-2 space-y-3 text-stone-600 text-sm leading-relaxed relative z-10 whitespace-pre-wrap scrollbar-thin scrollbar-thumb-stone-300 scrollbar-track-transparent">
                       {post.reflection}
                     </div>
-                    <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-400">
+                    <div className="mt-3 pt-3 border-t border-stone-200 text-xs text-stone-400 shrink-0">
                       Publicado el {new Date(post.published_at).toLocaleDateString()}
                     </div>
                   </motion.div>
                 </div>
               ))
             ) : (
-                <div className="grid md:grid-cols-2 gap-16 items-start">
+                <div className="grid md:grid-cols-2 gap-10 items-stretch">
                   {/* Placeholder si no hay posts */}
                   <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-100 aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center border border-stone-200"
+                    className="relative group rounded-2xl overflow-hidden shadow-2xl bg-stone-100 h-[380px] flex items-center justify-center border border-stone-200"
                   >
-                    <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                    <div className="text-stone-400 font-medium flex flex-col items-center gap-4 p-8 text-center relative z-20 group-hover:opacity-0 transition-opacity">
+                    <div className="text-stone-400 font-medium flex flex-col items-center gap-4 p-8 text-center">
                       <Sparkles className="w-8 h-8 opacity-50" />
                       <p>Aún no hay obras publicadas</p>
-                      <span className="text-sm opacity-60">"Pronto verás aquí mis nuevas creaciones"</span>
                     </div>
                   </motion.div>
 
@@ -390,15 +388,10 @@ export default function Home() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="bg-brand-olive-50 p-8 md:p-12 rounded-2xl border border-stone-100 relative h-full flex flex-col justify-center"
+                    className="bg-brand-olive-50 p-6 md:p-8 rounded-2xl border border-stone-100 relative h-[380px] flex flex-col justify-center"
                   >
-                    <div className="absolute top-0 right-0 p-8 opacity-10">
-                      <BookOpen className="w-24 h-24 text-brand-olive-dark" />
-                    </div>
-                    <h3 className="text-[#25D366]xl font-bold text-stone-400 mb-6 italic font-serif">Proximamente...</h3>
-                    <div className="space-y-4 text-stone-400 leading-relaxed relative z-10">
-                      <p>Las reflexiones y obras irán apareciendo en este espacio a medida que la artista las publique desde su panel de control.</p>
-                    </div>
+                    <h3 className="text-lg font-bold text-stone-400 mb-4 italic font-serif">Proximamente...</h3>
+                    <p className="text-stone-400 text-sm leading-relaxed">Las reflexiones y obras irán apareciendo en este espacio a medida que la artista las publique desde su panel de control.</p>
                   </motion.div>
                 </div>
             )}
