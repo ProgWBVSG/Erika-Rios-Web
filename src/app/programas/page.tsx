@@ -73,7 +73,7 @@ export default function ProgramasPage() {
                                 <span className="text-stone-400 font-medium tracking-widest uppercase">Fotografía Aprender</span>
                             </div>
                             <Image
-                                src="/images/aprender_img.jpg"
+                                src="/images/FotoAprenderAAprender.jpeg"
                                 alt="Aprender a Aprender"
                                 fill
                                 className="object-cover"

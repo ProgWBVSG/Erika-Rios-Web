@@ -299,7 +299,7 @@ export default function Home() {
 
           <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="/images/aprender_img.jpg"
+              src="/images/FotoAprenderAAprender.jpeg"
               alt="Taller Aprender a Aprender"
               fill
               className="object-cover"
