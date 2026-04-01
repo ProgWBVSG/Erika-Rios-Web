@@ -7,6 +7,7 @@ export const revalidate = 60
 export const metadata: Metadata = {
   title: 'Experiencias de Bienestar y Naturaleza',
   description: 'Encuentros, desayunos y trekkings de conexión natural. La pausa para reflexionar y volver a uno mismo siendo parte fundamental del sistema.',
+  alternates: { canonical: 'https://erikarios.com.ar/bienestar' },
   openGraph: {
     title: 'Experiencias de Bienestar y Naturaleza | Erika Rios',
     description: 'Encuentros, desayunos y trekkings de conexión natural.',

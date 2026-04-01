@@ -8,6 +8,7 @@ export const revalidate = 60 // Revalidación estática cada minuto
 export const metadata: Metadata = {
   title: 'Mentorías 1 a 1 y Grupales',
   description: 'Acompañamiento personalizado en módulos profundos como "Poder Personal" y "El Arte de Conversar". Transforma tu liderazgo y autenticidad con Erika Rios.',
+  alternates: { canonical: 'https://erikarios.com.ar/mentorias' },
   openGraph: {
     title: 'Mentorías 1 a 1 y Grupales | Erika Rios',
     description: 'Acompañamiento personalizado en módulos profundos. Transforma tu liderazgo y autenticidad.',

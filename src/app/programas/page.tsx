@@ -5,11 +5,12 @@ import ProgramasClient from './ProgramasClient'
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: 'Programas Grupales y Aprendizaje',
-  description: 'Inmersiones profundas como "Aprender a Aprender" y "Diseña tu Identidad". Fomentamos la escucha activa y transformamos el enfoque automático.',
+  title: 'Programas Grupales | Aprender a Aprender',
+  description: 'Inmersiones colectivas para desaprender viejos patrones y construir una nueva identidad. Programa de liderazgo evolutivo en grupo con Erika Rios.',
+  alternates: { canonical: 'https://erikarios.com.ar/programas' },
   openGraph: {
-    title: 'Programas Grupales y Aprendizaje | Erika Rios',
-    description: 'Inmersiones profundas para fomentar la escucha y transformar el enfoque automático.',
+    title: 'Programas Grupales | Erika Rios',
+    description: 'Inmersiones colectivas para desaprender viejos patrones y construir una nueva identidad.',
   }
 }
 
