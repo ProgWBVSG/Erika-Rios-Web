@@ -57,8 +57,22 @@ export default function Home() {
     }
   ];
 
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a
+      }
+    }))
+  };
+
   return (
     <main className="min-h-screen bg-brand-olive-50 text-brand-olive-900 font-sans selection:bg-brand-taupe-light selection:text-brand-taupe-dark">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
       {/* Navigation */}
       <nav className="fixed w-full z-50 top-0 border-b border-stone-200/50 bg-brand-olive-50/80 backdrop-blur-md">
