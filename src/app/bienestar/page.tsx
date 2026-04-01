@@ -46,13 +46,13 @@ export default function BienestarPage() {
                             Experiencias de Bienestar
                         </h1>
                         <p className="text-xl text-stone-600 leading-relaxed mb-8">
-                            Pausar para pensar y volver a vos. Desayunos con propósito, tertulias profundas y jornadas de conexión en la naturaleza para recordar quién sos debajo de tantas exigencias.
+                            La pausa para reflexionar y volver a uno mismo siendo parte fundamental del sistema al que perteneces.
                         </p>
 
                         <div className="space-y-6 mt-12">
                             <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                                 <div className="flex justify-between items-start mb-4">
-                                    <h3 className="text-xl font-bold text-brand-olive-900">Camino Abierto (Trekking & Coaching)</h3>
+                                    <h3 className="text-xl font-bold text-brand-olive-900">Camino Abierto</h3>
                                     <span className="text-brand-taupe-dark bg-brand-taupe-50 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Mensual</span>
                                 </div>
                                 <p className="text-stone-600 mb-6 font-light">
@@ -65,10 +65,10 @@ export default function BienestarPage() {
 
                             <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                                 <div className="flex justify-between items-start mb-4">
-                                    <h3 className="text-xl font-bold text-brand-olive-900">Desayunos con Propósito</h3>
+                                    <h3 className="text-xl font-bold text-brand-olive-900">Desayunos y Meriendas</h3>
                                 </div>
                                 <p className="text-stone-600 mb-6 font-light">
-                                    Encuentros matutinos e íntimos en la ciudad. Abordamos temáticas específicas de liderazgo, límites y emociones compartiendo un desayuno de calidad.
+                                    La historia se comprende y el futuro se construye hoy en este presente que nos da la oportunidad de elegir ser. Encuentros íntimos y profundos, con practicas y reflexiones para reconectar con tu bienestar integral.
                                 </p>
                                 <a href="https://wa.me/5493572440360?text=Hola%20Erika!%20Me%20interesa%20participar%20de%20los%20Desayunos%20con%20Prop%C3%B3sito." target="_blank" rel="noopener noreferrer" className="text-brand-olive-900 font-medium flex items-center gap-2 text-sm group hover:text-brand-taupe-dark transition-colors">
                                     Saber más <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -77,7 +77,7 @@ export default function BienestarPage() {
 
                             <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                                 <div className="flex justify-between items-start mb-4">
-                                    <h3 className="text-xl font-bold text-brand-olive-900">El Arte de Envejecer (Tertulia)</h3>
+                                    <h3 className="text-xl font-bold text-brand-olive-900">Tertulia entre colegas: el arte de envejecer</h3>
                                 </div>
                                 <p className="text-stone-600 mb-6 font-light">
                                     Un espacio sin tapujos para resignificar el paso del tiempo, el cuerpo, la vitalidad y cómo abordamos nuestra madurez desde la sabiduría.

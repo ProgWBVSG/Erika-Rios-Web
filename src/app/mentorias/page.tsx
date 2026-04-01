@@ -25,10 +25,10 @@ export default function MentoriasPage() {
                             <span>Proceso Profundo</span>
                         </div>
                         <h1 className="text-4xl md:text-[#25D366]xl lg:text-[#25D366]xl font-bold tracking-tight text-brand-olive-900 mb-6">
-                            Mentorías 1 a 1
+                            Mentorías
                         </h1>
                         <p className="text-xl text-stone-600 leading-relaxed mb-8">
-                            Acompañamiento personalizado en módulos profundos: Poder Personal, El Arte de Conversar y Modelo de Negocio. Un espacio íntimo para escucharte y organizar tu verdad.
+                            Acompañamiento grupal o personalizado en módulos profundos. Un espacio íntimo para escucharte y organizar tu verdad.
                         </p>
 
                         <p className="text-sm text-stone-500 italic mt-2 mb-6">Cada módulo es independiente del otro.</p>
@@ -39,35 +39,26 @@ export default function MentoriasPage() {
                                     <span className="w-8 h-8 rounded-full bg-brand-taupe-light flex items-center justify-center text-brand-olive-dark font-bold text-sm shrink-0">1</span>
                                     <h3 className="text-xl font-bold text-brand-olive-900">Poder Personal</h3>
                                 </div>
-                                <p className="text-sm text-brand-taupe-dark font-medium mb-2">4 encuentros · 1½ h c/u · Teórico/práctico</p>
-                                <p className="text-stone-600">Te permite reconocer tus recursos internos, reflexionar en relación a tu inteligencia emocional y establecer límites sanos para liderar tu vida desde la autenticidad.</p>
+                                <p className="text-sm text-brand-taupe-dark font-medium mb-2">3 encuentros de 3hrs cada uno · Teórico/práctico</p>
+                                <p className="text-stone-600">“La aventura de vivir es un misterio que nos pide que seamos autores originales, abrazando la incertidumbre”. Te acompaño a reconocer tus recursos internos, reflexionar en relación a tu inteligencia emocional y establecer límites sanos para liderar tu vida desde la autenticidad.</p>
                             </div>
 
                             <div className="bg-brand-olive-50 p-8 rounded-2xl border border-stone-100">
                                 <div className="flex items-center gap-3 mb-3">
                                     <span className="w-8 h-8 rounded-full bg-brand-taupe-light flex items-center justify-center text-brand-olive-dark font-bold text-sm shrink-0">2</span>
-                                    <h3 className="text-xl font-bold text-brand-olive-900">Conversaciones para la Acción</h3>
+                                    <h3 className="text-xl font-bold text-brand-olive-900">El Arte de Conversar</h3>
                                 </div>
                                 <p className="text-sm text-brand-taupe-dark font-medium mb-2">4 encuentros · 1½ h c/u · Teórico/práctico</p>
-                                <p className="text-stone-600">Te permite revisar tus habilidades para una conversación asertiva y potenciar habilidades desde la comunicación no violenta, lo que permite mejorar la calidad de tus relaciones personales y profesionales.</p>
+                                <p className="text-stone-600">“La calidad de nuestras conversaciones impacta en la calidad de nuestras relaciones”. Te acompaño a revisar tu conversar para alinearla hacia una conversación asertiva, que permite mejorar la calidad de tus relaciones personales y profesionales.</p>
                             </div>
 
                             <div className="bg-brand-olive-50 p-8 rounded-2xl border border-stone-100">
                                 <div className="flex items-center gap-3 mb-3">
                                     <span className="w-8 h-8 rounded-full bg-brand-taupe-light flex items-center justify-center text-brand-olive-dark font-bold text-sm shrink-0">3</span>
-                                    <h3 className="text-xl font-bold text-brand-olive-900">Gestión del Tiempo</h3>
+                                    <h3 className="text-xl font-bold text-brand-olive-900">Gestiona y Organiza en la Incertidumbre</h3>
                                 </div>
-                                <p className="text-sm text-brand-taupe-dark font-medium mb-2">3 encuentros · 1½ h c/u</p>
-                                <p className="text-stone-600">Te permite organizar y gestionar tanto el tiempo y las tareas como también tus espacios, para encontrar un equilibrio que te acerque a mejorar la productividad y el enfoque.</p>
-                            </div>
-
-                            <div className="bg-brand-olive-50 p-8 rounded-2xl border border-stone-100">
-                                <div className="flex items-center gap-3 mb-3">
-                                    <span className="w-8 h-8 rounded-full bg-brand-taupe-light flex items-center justify-center text-brand-olive-dark font-bold text-sm shrink-0">4</span>
-                                    <h3 className="text-xl font-bold text-brand-olive-900">Negociación para Emprendedores con Sentido</h3>
-                                </div>
-                                <p className="text-sm text-brand-taupe-dark font-medium mb-2">4 encuentros · 1½ h c/u</p>
-                                <p className="text-stone-600">Herramientas y estrategias de negociación con propósito, orientadas a emprendedores que quieren crecer sin perder su esencia ni sus valores.</p>
+                                <p className="text-sm text-brand-taupe-dark font-medium mb-2">4 encuentros · 2h c/u · Teórico/práctico</p>
+                                <p className="text-stone-600">“Incluso la gente que dice que no podemos hacer nada para cambiar nuestro destino mira antes de cruzar la calle”. Te acompaño a organizar y gestionar lo necesario para encontrar un equilibrio que te acerque a mejorar tu enfoque, maximizar tu potencial y como consecuencia tu productividad.</p>
                             </div>
                         </div>
 

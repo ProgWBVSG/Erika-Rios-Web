@@ -201,8 +201,8 @@ export default function Home() {
               className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
             >
               <Compass className="w-10 h-10 text-brand-taupe mb-6" />
-              <h3 className="text-[#25D366]xl font-bold mb-4">Mentorías 1 a 1</h3>
-              <p className="text-stone-400 mb-8 flex-grow">Poder personal, conversaciones para la acción, gestión del tiempo, negociación para emprendedores con sentido. Un espacio íntimo para escucharte y organizar tu verdad.</p>
+              <h3 className="text-[#25D366]xl font-bold mb-4">Mentorías</h3>
+              <p className="text-stone-400 mb-8 flex-grow">Acompañamiento grupal o personalizado en módulos profundos. Un espacio íntimo para escucharte y organizar tu verdad.</p>
               <Link href="/mentorias" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors">
                 Consultar mentorías <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -256,28 +256,28 @@ export default function Home() {
             <span className="text-brand-taupe-dark font-medium tracking-widest uppercase text-sm mb-4 block" id="aprender">Programa Estrella</span>
             <h2 className="text-4xl md:text-[#25D366]xl font-bold mb-6 text-brand-olive-dark tracking-tight">Aprender a Aprender</h2>
             <p className="text-xl text-stone-600 mb-8 font-serif italic">&quot;Desde tu ser, transforma lo complejo en algo simple.&quot;</p>
-            <p className="text-stone-600 mb-8">Un itinerario profundo de 4 meses diseñado para quienes buscan desaprender viejos patrones y abrazar una nueva forma de ver su vida, fomentando la adaptabilidad, autoconsciencia y la innovación.</p>
+            <p className="text-stone-600 mb-8">Un itinerario profundo de 4 meses diseñado para quienes buscan desaprender viejos patrones y abrazar una nueva forma de ver su vida, fomentando la adaptabilidad, autoconsciencia y el liderazgo evolutivo.</p>
 
             <ul className="space-y-6 mb-10 text-stone-700">
               <li className="flex gap-4">
                 <div className="w-8 h-8 rounded-full bg-brand-taupe-light flex items-center justify-center shrink-0">1</div>
                 <div>
                   <strong className="block text-brand-olive-900 text-lg">9 Talleres Online Grupales</strong>
-                  <span>Espacios de aprendizaje vivencial y reflexivo (1 cada dos semanas, 2.5 hs c/u).</span>
+                  <span>Espacios de aprendizaje vivencial y reflexivo (encuentros quincenales, 2.5hs c/u).</span>
                 </div>
               </li>
               <li className="flex gap-4">
                 <div className="w-8 h-8 rounded-full bg-brand-taupe-light flex items-center justify-center shrink-0">2</div>
                 <div>
                   <strong className="block text-brand-olive-900 text-lg">5 Rutas de Aprendizaje Individual</strong>
-                  <span>Lecturas y prácticas que podés hacer a tu propio ritmo para anclar el conocimiento.</span>
+                  <span>Lecturas y prácticas para anclar el conocimiento.</span>
                 </div>
               </li>
               <li className="flex gap-4">
                 <div className="w-8 h-8 rounded-full bg-brand-taupe-light flex items-center justify-center shrink-0">3</div>
                 <div>
-                  <strong className="block text-brand-olive-900 text-lg">4 Sesiones de Coaching 1 a 1</strong>
-                  <span>1 mensual. Un espacio personal para profundizar tus propios desafíos en el programa.</span>
+                  <strong className="block text-brand-olive-900 text-lg">4 sesiones de Coaching 1 a 1</strong>
+                  <span>Un espacio personal para profundizar tus propios desafíos en el programa. (1 mensual)</span>
                 </div>
               </li>
             </ul>
@@ -286,7 +286,7 @@ export default function Home() {
               <div className="absolute top-0 left-0 w-2 h-full bg-brand-taupe-500"></div>
               <p className="font-bold text-brand-olive-900 text-lg mb-2 flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-brand-taupe" />
-                Próxima Edición: 31 de Julio – 20 hs (Arg)
+                Próxima Edición: 30 de Julio – 20 hs (Arg)
               </p>
               <p className="text-stone-600 mb-6">Modalidad virtual por Zoom • Duración total: 4 meses (16 semanas)</p>
 

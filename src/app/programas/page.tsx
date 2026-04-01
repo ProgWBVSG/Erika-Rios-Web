@@ -28,7 +28,7 @@ export default function ProgramasPage() {
                             Programas Grupales
                         </h1>
                         <p className="text-xl text-stone-600 leading-relaxed mb-8">
-                            Transformamos el enfoque automático de nuestras vidas a través del aprendizaje en comunidad. Espacios diseñados con escucha activa, compasión y reflexión compartida.
+                            Inmersiones profundas donde fomentamos la escucha activa, la compasión y transformamos el enfoque automático de nuestras vidas.
                         </p>
                     </motion.div>
                 </div>
@@ -48,15 +48,19 @@ export default function ProgramasPage() {
                             <ul className="space-y-4 mb-10 text-stone-700">
                                 <li className="flex items-start gap-3">
                                     <div className="w-6 h-6 rounded-full bg-brand-taupe-50 flex items-center justify-center shrink-0 mt-1"><Sparkles className="w-3 h-3 text-brand-taupe-dark" /></div>
-                                    <p><strong>Cuestionar Modelos Mentales:</strong> Descubrí las creencias y juicios invisibles que dirigen tu forma de ser.</p>
+                                    <p>Descubre creencias invisibles que dirigen tu forma de ser, obstáculos que te impiden avanzar y explorar una nueva perspectiva conectada con las posibilidades.</p>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <div className="w-6 h-6 rounded-full bg-brand-taupe-50 flex items-center justify-center shrink-0 mt-1"><Sparkles className="w-3 h-3 text-brand-taupe-dark" /></div>
-                                    <p><strong>El Cuerpo como Dominio:</strong> Nuestra biología define qué estamos dispuestos a aceptar. Aprenderemos a leer nuestro mapa físico.</p>
+                                    <p>Reconocer y comprender las propias emociones y estados de ánimo para escuchar nuestra casa cuerpo es fundamental.</p>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <div className="w-6 h-6 rounded-full bg-brand-taupe-50 flex items-center justify-center shrink-0 mt-1"><Sparkles className="w-3 h-3 text-brand-taupe-dark" /></div>
-                                    <p><strong>El Aprendigo (El ego del aprendizaje):</strong> Reconocemos las barreras internas para diseñar nuevas formas de estar en el mundo.</p>
+                                    <p>Cultiva el pensamiento crítico y la creatividad.</p>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <div className="w-6 h-6 rounded-full bg-brand-taupe-50 flex items-center justify-center shrink-0 mt-1"><Sparkles className="w-3 h-3 text-brand-taupe-dark" /></div>
+                                    <p>Integra practicas de mindfulnes y bienestar integral.</p>
                                 </li>
                             </ul>
 
