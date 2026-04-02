@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, ArrowRight, BookOpen, Users, Compass, HelpCircle, X, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import { Sparkles, ArrowRight, BookOpen, Users, Compass, Heart, HelpCircle, X, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { createClient } from "@/utils/supabase/client";
@@ -81,6 +81,7 @@ export default function Home() {
           <div className="hidden md:flex gap-8 text-sm font-medium text-stone-600">
             <a href="#sobre-mi" className="hover:text-brand-taupe-dark transition-colors">Sobre mí</a>
             <a href="#servicios" className="hover:text-brand-taupe-dark transition-colors">Servicios</a>
+            <Link href="/coaching" className="hover:text-brand-taupe-dark transition-colors">Coaching 1 a 1</Link>
             <a href="#contacto" className="hover:text-brand-taupe-dark transition-colors">Contacto</a>
           </div>
           <a href="#contacto" className="bg-stone-900 text-stone-50 px-5 py-2.5 rounded-full text-sm font-medium hover:bg-brand-olive transition-colors">
@@ -205,13 +206,29 @@ export default function Home() {
             <p className="text-stone-400 text-lg">Diseño espacios de reflexión, aprendizaje y evolución para que puedas construir tu camino con claridad y propósito.</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Service 1 */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Service 1 - Coaching 1 a 1 */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
+            >
+              <Heart className="w-10 h-10 text-brand-taupe mb-6" />
+              <h3 className="text-[#25D366]xl font-bold mb-4">Procesos de Coaching 1 a 1</h3>
+              <p className="text-stone-400 mb-8 flex-grow">Acompañamiento personalizado para explorar en profundidad aquello que querés desarmar o mirar distinto, al ritmo que necesites y sin fórmulas rígidas.</p>
+              <Link href="/coaching" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors">
+                Conocer más <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+
+            {/* Service 2 - Mentorías */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
             >
               <Compass className="w-10 h-10 text-brand-taupe mb-6" />
@@ -222,12 +239,12 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Service 2 */}
+            {/* Service 3 - Experiencias de Bienestar */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
             >
               <Sparkles className="w-10 h-10 text-brand-taupe mb-6" />
@@ -238,12 +255,12 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Service 3 */}
+            {/* Service 4 - Programas Grupales */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
             >
               <Users className="w-10 h-10 text-brand-taupe mb-6" />
