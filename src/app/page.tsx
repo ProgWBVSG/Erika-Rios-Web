@@ -206,29 +206,13 @@ export default function Home() {
             <p className="text-stone-400 text-lg">Diseño espacios de reflexión, aprendizaje y evolución para que puedas construir tu camino con claridad y propósito.</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Service 1 - Coaching 1 a 1 */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Service 1 - Mentorías */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
-            >
-              <Heart className="w-10 h-10 text-brand-taupe mb-6" />
-              <h3 className="text-[#25D366]xl font-bold mb-4">Procesos de Coaching 1 a 1</h3>
-              <p className="text-stone-400 mb-8 flex-grow">Acompañamiento personalizado para explorar en profundidad aquello que querés desarmar o mirar distinto, al ritmo que necesites y sin fórmulas rígidas.</p>
-              <Link href="/coaching" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors">
-                Conocer más <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
-
-            {/* Service 2 - Mentorías */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
             >
               <Compass className="w-10 h-10 text-brand-taupe mb-6" />
@@ -239,12 +223,12 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Service 3 - Experiencias de Bienestar */}
+            {/* Service 2 - Experiencias de Bienestar */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
             >
               <Sparkles className="w-10 h-10 text-brand-taupe mb-6" />
@@ -255,12 +239,12 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Service 4 - Programas Grupales */}
+            {/* Service 3 - Programas Grupales */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group flex flex-col"
             >
               <Users className="w-10 h-10 text-brand-taupe mb-6" />
@@ -271,6 +255,24 @@ export default function Home() {
               </Link>
             </motion.div>
           </div>
+
+          {/* Coaching 1 a 1 - Card destacada separada */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-10 bg-stone-800/50 p-10 rounded-2xl border border-stone-700/50 hover:border-brand-taupe/30 transition-colors group grid md:grid-cols-[auto_1fr_auto] gap-8 items-center"
+          >
+            <Heart className="w-10 h-10 text-brand-taupe" />
+            <div>
+              <h3 className="text-[#25D366]xl font-bold mb-2">Procesos de Coaching 1 a 1</h3>
+              <p className="text-stone-400">Acompañamiento personalizado para explorar en profundidad aquello que querés desarmar o mirar distinto, al ritmo que necesites y sin fórmulas rígidas.</p>
+            </div>
+            <Link href="/coaching" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors whitespace-nowrap">
+              Conocer más <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
