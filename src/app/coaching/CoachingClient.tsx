@@ -100,9 +100,10 @@ export default function CoachingClient() {
                             <span className="text-stone-400 font-medium tracking-widest uppercase">Fotografía Coaching</span>
                         </div>
                         <Image
-                            src="/images/coaching_1a1_img.jpg"
+                            src="https://i.postimg.cc/x8Hcr5MK/Erika-Sesion-7-(1).jpg"
                             alt="Proceso de Coaching 1 a 1 con Erika Rios"
                             fill
+                            unoptimized
                             className="object-cover"
                             onError={(e) => { e.currentTarget.style.display = 'none'; }}
                         />
