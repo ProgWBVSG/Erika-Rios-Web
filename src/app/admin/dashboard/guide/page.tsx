@@ -1,195 +1,185 @@
 export default function GuidePage() {
   return (
-    <div className="max-w-3xl space-y-10">
-      <div>
-        <h2 className="text-2xl font-semibold">📋 Guía de Crecimiento Web</h2>
-        <p className="text-gray-500 mt-1 text-sm">
-          Todo lo que podés hacer desde tu panel y desde tus redes para que la web empiece a traer clientes.
+    <div className="max-w-2xl">
+
+      {/* Header */}
+      <div className="mb-12">
+        <p className="text-xs font-semibold tracking-widest text-stone-400 uppercase mb-3">Estrategia de Presencia Digital</p>
+        <h2 className="text-3xl font-bold text-stone-900 tracking-tight leading-snug">
+          Recomendaciones para que tu web trabaje para vos
+        </h2>
+        <p className="mt-4 text-stone-500 text-base leading-relaxed">
+          Una web bien construida es solo el punto de partida. Lo que la convierte en una herramienta de negocio real son los hábitos que la rodean. Estas son las recomendaciones más importantes.
         </p>
+        <div className="mt-6 h-px bg-stone-100" />
       </div>
 
-      {/* SECTION: SEO */}
-      <Card color="blue" emoji="🔍" title="SEO — Lo que ya funciona (y lo que podés potenciar)">
-        <p className="text-gray-600 text-sm mb-4">
-          Tu web ya está optimizada técnicamente: tiene títulos, descripciones, datos estructurados para Google y un sitemap automático. Eso es la base. Lo que Google premia a largo plazo es el <strong>contenido relevante y frecuente</strong>.
-        </p>
-        <ul className="space-y-3 text-sm text-gray-700">
-          <CheckItem>
-            <strong>Publicá reflexiones regularmente.</strong> Cada obra que subís en "Arte" es una página indexable. Agregá reflexiones largas y descriptivas — Google las lee y las posiciona.
-          </CheckItem>
-          <CheckItem>
-            <strong>Usá palabras clave naturales.</strong> En las descripciones de servicios, mencioná frases como "coaching ontológico Argentina", "liderazgo consciente", "transformación personal online". Sin forzar, como si le explicaras a alguien.
-          </CheckItem>
-          <CheckItem>
-            <strong>Testimonios = contenido único.</strong> Agregá testimonios reales en el panel — aparecen en la homepage y Google los valora como prueba social.
-          </CheckItem>
-          <CheckItem>
-            <strong>El programa tiene fecha.</strong> Actualizá la fecha del "Programa Estrella" desde Contenido cada vez que abrás una nueva edición — eso mantiene el sitio fresco para Google.
-          </CheckItem>
-        </ul>
-        <Tip>Los resultados de SEO se ven entre 3 y 6 meses. Es lento pero gratis y dura. Constancia gana a velocidad.</Tip>
-      </Card>
+      <div className="space-y-12">
 
-      {/* SECTION: CONVERSION */}
-      <Card color="green" emoji="🎯" title="Conversión — Que quien entra, escriba">
-        <p className="text-gray-600 text-sm mb-4">
-          La web ya tiene los elementos clave de conversión. Estos son los hábitos que los potencian:
-        </p>
-        <ul className="space-y-3 text-sm text-gray-700">
-          <CheckItem>
-            <strong>Testimonios actualizados.</strong> Son lo primero que busca alguien que duda. Pedile a cada cliente que terminó un proceso que te deje 2-3 líneas. Cargalas en "Testimonios" — aparecen automáticamente en la home.
-          </CheckItem>
-          <CheckItem>
-            <strong>Actualizá la fecha del programa.</strong> "Cupos disponibles" y una fecha próxima real generan urgencia real. Una fecha vencida hace el efecto contrario.
-          </CheckItem>
-          <CheckItem>
-            <strong>Respondé el WhatsApp rápido.</strong> El formulario guarda el lead en "Contactos" y te llega notificación. La tasa de cierre cae mucho si tardás más de 2 horas en responder el primer mensaje.
-          </CheckItem>
-          <CheckItem>
-            <strong>Actualizá el texto del hero.</strong> Si algo no está resonando, cambialo desde "Contenido". No necesitás desarrollador — podés probar distintos títulos y ver cuál genera más contactos.
-          </CheckItem>
-        </ul>
-        <Tip>El botón de WhatsApp flotante en la web convierte muy bien. Si alguien llega y tiene dudas, ese botón es el puente directo.</Tip>
-      </Card>
+        {/* 01 */}
+        <Insight number="01" label="Presencia constante">
+          <Lead>
+            Tu web no genera tráfico sola. Lo que trae personas a ella es tu presencia activa en redes —
+            Instagram en particular. La web es donde los convencés; Instagram es donde los encontrás.
+          </Lead>
+          <Points>
+            <Point>
+              Publicar <strong>3 veces por semana</strong> en Instagram —Reels cortos de reflexiones, fragmentos de talleres o ideas sobre liderazgo— es lo que más alcance orgánico genera hoy.
+            </Point>
+            <Point>
+              Cada publicación debería terminar con una invitación clara: <em>"Si esto te resonó, escribime por DM"</em> o <em>"El link en bio te lleva al programa"</em>. Sin ese cierre, la gente consume y se va.
+            </Point>
+            <Point>
+              Las reflexiones que escribís en el panel de Arte son contenido listo para Instagram. No hace falta crear desde cero — solo trasladarlo.
+            </Point>
+          </Points>
+          <Note>No necesitás miles de seguidores. Con una audiencia pequeña pero real y contenido consistente, el flujo de consultas aparece solo.</Note>
+        </Insight>
 
-      {/* SECTION: CRM */}
-      <Card color="indigo" emoji="👤" title="CRM — Gestioná tus leads sin perder ninguno">
-        <p className="text-gray-600 text-sm mb-4">
-          Cada persona que llena el formulario queda guardada en "Contactos". Así no perdés ningún lead aunque no respondas WhatsApp al instante.
-        </p>
-        <ul className="space-y-3 text-sm text-gray-700">
-          <CheckItem>
-            <strong>Revisá "Contactos" todos los días.</strong> Entrá, mirá si hay nuevos leads y cambiá su estado a "Contactado" cuando les escribís.
-          </CheckItem>
-          <CheckItem>
-            <strong>Usá las notas internas.</strong> Anotá qué te dijo, cuándo te va a responder, qué servicio le interesa. Eso te salva cuando tenés varios prospects al mismo tiempo.
-          </CheckItem>
-          <CheckItem>
-            <strong>Marcá "Convertido" cuando cerrás.</strong> Así podés ver en "Resumen" cuántos leads convierte tu web en clientes reales — y medir si algo está funcionando.
-          </CheckItem>
-        </ul>
-        <div className="mt-4 p-3 bg-indigo-50 rounded-lg border border-indigo-100 text-xs text-indigo-700">
-          <strong>Pipeline sugerido:</strong> Nuevo → respondiste = Contactado → tuvieron charla exploratoria = En proceso → cerró = Convertido → no responde más = Descartado
+        {/* 02 */}
+        <Insight number="02" label="Prueba social">
+          <Lead>
+            Antes de contactarte, casi todos van a buscar si alguien más ya confió en vos. Los testimonios son la respuesta a esa pregunta silenciosa.
+          </Lead>
+          <Points>
+            <Point>
+              Pedile a cada cliente que terminó un proceso que te deje 2 o 3 líneas honestas sobre su experiencia. No tienen que ser perfectas — mientras más auténticas, mejor.
+            </Point>
+            <Point>
+              Cargalos en el panel de <strong>Testimonios</strong> con el check "Activo" marcado. Aparecen automáticamente en la homepage, antes de la sección de contacto.
+            </Point>
+            <Point>
+              Actualizalos cada vez que terminás un proceso nuevo. Una web con testimonios recientes transmite que tu trabajo está vivo y activo.
+            </Point>
+          </Points>
+          <Note>Un testimonio real supera a cualquier texto de marketing. Es la voz de alguien que ya estuvo donde está tu próximo cliente.</Note>
+        </Insight>
+
+        {/* 03 */}
+        <Insight number="03" label="Visibilidad en Google">
+          <Lead>
+            Tu web ya está configurada técnicamente para Google: títulos, descripciones, datos estructurados y sitemap. Eso es la base. Lo que Google premia con el tiempo es el contenido.
+          </Lead>
+          <Points>
+            <Point>
+              Cada reflexión que subís en "Arte" es contenido nuevo que Google puede leer e indexar. Cuanto más extensa y específica sea la reflexión, mayor la chance de que aparezca en búsquedas relacionadas.
+            </Point>
+            <Point>
+              En las descripciones de servicios y el texto de la web, usar frases como <em>"coaching ontológico Argentina"</em>, <em>"liderazgo consciente"</em> o <em>"transformación personal online"</em> de forma natural ayuda al posicionamiento.
+            </Point>
+            <Point>
+              Actualizá la fecha del Programa Estrella cada nueva edición. Un sitio que se actualiza regularmente es un sitio que Google considera relevante.
+            </Point>
+          </Points>
+          <Note>El SEO es lento —los resultados reales se ven entre 3 y 6 meses— pero es el único canal que crece mientras dormís. La constancia en el contenido es la única clave.</Note>
+        </Insight>
+
+        {/* 04 */}
+        <Insight number="04" label="Gestión de contactos">
+          <Lead>
+            Cada persona que llena el formulario de tu web queda guardada en el panel de Contactos. Eso significa que ningún lead se pierde, incluso si no respondés WhatsApp al instante.
+          </Lead>
+          <Points>
+            <Point>
+              Revisá la sección de <strong>Contactos</strong> una vez por día. Si hay alguien nuevo, escribile ese mismo día — la tasa de cierre baja considerablemente si tardás más de 24 horas.
+            </Point>
+            <Point>
+              Usá las notas internas para registrar qué te dijo, qué servicio le interesa y cuándo volvés a escribirle. Esa información vale mucho cuando tenés varios prospectos al mismo tiempo.
+            </Point>
+            <Point>
+              Actualizá el estado de cada contacto: <em>Contactado</em> cuando les escribís, <em>En proceso</em> cuando tuvieron una charla, <em>Convertido</em> cuando cerraron. Así el Resumen te muestra datos reales.
+            </Point>
+          </Points>
+          <Note>La rapidez en la respuesta es uno de los factores que más influye en el cierre. Si recibís una notificación, respondé antes de que pase una hora.</Note>
+        </Insight>
+
+        {/* 05 */}
+        <Insight number="05" label="Lectura de métricas">
+          <Lead>
+            El panel de Resumen te muestra visitas y contactos. Con solo dos números podés entender si algo está funcionando o no.
+          </Lead>
+          <Points>
+            <Point>
+              <strong>Visitas sin contactos</strong> indica que las personas llegan pero algo en la web no las convence de escribir. Vale la pena revisar el copy del hero o los textos desde el panel de Contenido.
+            </Point>
+            <Point>
+              <strong>Pocas visitas</strong> indica que el problema no es la web sino el tráfico — hay que reforzar la presencia en redes.
+            </Point>
+            <Point>
+              <strong>Contactos que no cierran</strong> casi siempre tiene que ver con la charla exploratoria o con la propuesta de valor. No con la web.
+            </Point>
+          </Points>
+          <Note>Cinco minutos los lunes alcanza: revisá Resumen, contá contactos nuevos de la semana y decidí si algo necesita ajuste.</Note>
+        </Insight>
+
+        {/* Divider */}
+        <div className="h-px bg-stone-100" />
+
+        {/* Closing card */}
+        <div className="bg-stone-50 rounded-2xl border border-stone-200 p-8">
+          <p className="text-xs font-semibold tracking-widest text-stone-400 uppercase mb-4">Para empezar esta semana</p>
+          <div className="space-y-4">
+            {[
+              { n: '—', text: 'Pedile un testimonio a alguien con quien hayas trabajado recientemente y cargalo en el panel.' },
+              { n: '—', text: 'Verificá que la fecha del Programa Estrella en Contenido sea la próxima real.' },
+              { n: '—', text: 'Subí una reflexión de Arte con texto extenso — ese contenido trabaja para el SEO.' },
+              { n: '—', text: 'Publicá en Instagram esta semana con el link de la web en bio.' },
+              { n: '—', text: 'Revisá Contactos y respondé a cualquiera que haya quedado sin respuesta.' },
+            ].map((item, i) => (
+              <div key={i} className="flex gap-4 items-start">
+                <span className="text-stone-300 font-light text-lg leading-none mt-0.5 select-none">{item.n}</span>
+                <p className="text-stone-600 text-sm leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </Card>
 
-      {/* SECTION: INSTAGRAM */}
-      <Card color="rose" emoji="📱" title="Instagram — La fuente de tráfico más rápida">
-        <p className="text-gray-600 text-sm mb-4">
-          Para un perfil como el tuyo, Instagram bien usado trae más tráfico que el SEO en el corto plazo. La web es el cierre; Instagram es la puerta.
-        </p>
-        <ul className="space-y-3 text-sm text-gray-700">
-          <CheckItem>
-            <strong>Link en bio → tu web.</strong> Siempre. Y cambialo cuando tenés algo activo (nuevo programa, nueva fecha).
-          </CheckItem>
-          <CheckItem>
-            <strong>Frecuencia mínima: 3 posts por semana.</strong> Reels cortos (30-60 seg) de reflexiones, tips de liderazgo o fragmentos de tus talleres tienen el mayor alcance orgánico hoy.
-          </CheckItem>
-          <CheckItem>
-            <strong>CTA en cada post.</strong> Terminá cada contenido con una acción: "Si esto te resonó, escribime por DM" o "Link en bio para ver el programa". Sin CTA, la gente no actúa.
-          </CheckItem>
-          <CheckItem>
-            <strong>Stories todos los días.</strong> No tienen que ser perfectas. Una frase, una pregunta al público, un detrás de escena de un taller. Mantienen presencia sin producción.
-          </CheckItem>
-          <CheckItem>
-            <strong>Usá las reflexiones de tus obras.</strong> Lo que escribís en el panel de Arte puede ser exactamente el copy de un post. No hay que crear contenido nuevo — solo trasladarlo.
-          </CheckItem>
-        </ul>
-        <Tip>No necesitás muchos seguidores. Con 500 seguidores reales y contenido consistente podés tener un flujo de clientes estable. Calidad de audiencia &gt; cantidad.</Tip>
-      </Card>
-
-      {/* SECTION: ANALYTICS */}
-      <Card color="amber" emoji="📊" title="Métricas — Qué mirar y cada cuánto">
-        <p className="text-gray-600 text-sm mb-4">
-          Desde el panel "Resumen" podés ver visitas y leads. Estas son las únicas métricas que importan por ahora:
-        </p>
-        <ul className="space-y-3 text-sm text-gray-700">
-          <CheckItem>
-            <strong>Visitas semanales.</strong> Si suben después de postear en Instagram, la estrategia está funcionando.
-          </CheckItem>
-          <CheckItem>
-            <strong>Leads nuevos por semana.</strong> Si hay visitas pero no hay leads, el problema es la web (el copy no convence). Si no hay visitas, el problema es el tráfico (las redes).
-          </CheckItem>
-          <CheckItem>
-            <strong>Conversión de leads a clientes.</strong> Si cerrás 1 de cada 5 leads, estás bien. Si cerrás menos, el problema es la charla exploratoria o el precio.
-          </CheckItem>
-        </ul>
-        <div className="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-100 text-xs text-amber-800">
-          <strong>Revisión semanal sugerida (5 min):</strong> Lunes → mirá Resumen → ¿cuántas visitas? → ¿cuántos leads? → ¿alguno sin responder? → actualizá estados en CRM.
-        </div>
-      </Card>
-
-      {/* SECTION: QUICK WINS */}
-      <Card color="teal" emoji="⚡" title="Acciones rápidas de esta semana">
-        <p className="text-gray-600 text-sm mb-3">Si tenés que empezar por algo, que sea esto:</p>
-        <ol className="space-y-2 text-sm text-gray-700 list-none">
-          {[
-            'Pedile a 2 o 3 clientes pasados un testimonio corto y cargalos en "Testimonios".',
-            'Actualizá la fecha del Programa Estrella en "Contenido" si ya tenés la próxima fecha.',
-            'Subí al menos 1 obra con reflexión larga en "Arte" — más contenido, más SEO.',
-            'Posteá en Instagram con link en bio a la web al menos 3 veces esta semana.',
-            'Revisá "Contactos" — ¿hay algún lead sin responder?',
-          ].map((item, i) => (
-            <li key={i} className="flex gap-3 items-start">
-              <span className="shrink-0 w-6 h-6 rounded-full bg-teal-100 text-teal-700 text-xs font-bold flex items-center justify-center mt-0.5">
-                {i + 1}
-              </span>
-              {item}
-            </li>
-          ))}
-        </ol>
-      </Card>
+      </div>
     </div>
   )
 }
 
-function Card({ color, emoji, title, children }: {
-  color: 'blue' | 'green' | 'indigo' | 'rose' | 'amber' | 'teal'
-  emoji: string
-  title: string
+function Insight({ number, label, children }: {
+  number: string
+  label: string
   children: React.ReactNode
 }) {
-  const border = {
-    blue:   'border-blue-200 bg-blue-50/30',
-    green:  'border-green-200 bg-green-50/30',
-    indigo: 'border-indigo-200 bg-indigo-50/30',
-    rose:   'border-rose-200 bg-rose-50/30',
-    amber:  'border-amber-200 bg-amber-50/30',
-    teal:   'border-teal-200 bg-teal-50/30',
-  }[color]
-
-  const heading = {
-    blue:   'text-blue-800',
-    green:  'text-green-800',
-    indigo: 'text-indigo-800',
-    rose:   'text-rose-800',
-    amber:  'text-amber-800',
-    teal:   'text-teal-800',
-  }[color]
-
   return (
-    <div className={`rounded-xl border p-6 ${border}`}>
-      <h3 className={`text-base font-semibold mb-4 ${heading}`}>
-        {emoji} {title}
-      </h3>
-      {children}
+    <div className="flex gap-8">
+      <div className="shrink-0 text-right pt-0.5 w-8">
+        <span className="text-xs font-semibold text-stone-300 tabular-nums">{number}</span>
+      </div>
+      <div className="flex-1 border-l border-stone-100 pl-8">
+        <p className="text-xs font-semibold tracking-widest text-stone-400 uppercase mb-3">{label}</p>
+        {children}
+      </div>
     </div>
   )
 }
 
-function CheckItem({ children }: { children: React.ReactNode }) {
+function Lead({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex gap-2 items-start">
-      <span className="text-green-500 mt-0.5 shrink-0">✓</span>
-      <span>{children}</span>
+    <p className="text-stone-800 text-base leading-relaxed mb-5 font-medium">{children}</p>
+  )
+}
+
+function Points({ children }: { children: React.ReactNode }) {
+  return <ul className="space-y-3 mb-5">{children}</ul>
+}
+
+function Point({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex gap-3 items-start">
+      <span className="mt-2 w-1 h-1 rounded-full bg-stone-300 shrink-0" />
+      <p className="text-stone-600 text-sm leading-relaxed">{children}</p>
     </li>
   )
 }
 
-function Tip({ children }: { children: React.ReactNode }) {
+function Note({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 p-3 bg-white/70 rounded-lg border border-stone-200 text-xs text-stone-600">
-      💡 <strong>Tip:</strong> {children}
-    </div>
+    <p className="text-stone-400 text-xs leading-relaxed border-l-2 border-stone-200 pl-4 italic">
+      {children}
+    </p>
   )
 }
