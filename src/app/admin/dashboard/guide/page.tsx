@@ -6,10 +6,10 @@ export default function GuidePage() {
       <div className="mb-12">
         <p className="text-xs font-semibold tracking-widest text-stone-400 uppercase mb-3">Estrategia de Presencia Digital</p>
         <h2 className="text-3xl font-bold text-stone-900 tracking-tight leading-snug">
-          Recomendaciones para que tu web trabaje para vos
+          Guía de presencia digital
         </h2>
         <p className="mt-4 text-stone-500 text-base leading-relaxed">
-          Una web bien construida es solo el punto de partida. Lo que la convierte en una herramienta de negocio real son los hábitos que la rodean. Estas son las recomendaciones más importantes.
+          Recomendaciones sobre qué hacer con la web, las redes y los contactos que llegan para sacarle el mayor provecho posible.
         </p>
         <div className="mt-6 h-px bg-stone-100" />
       </div>
