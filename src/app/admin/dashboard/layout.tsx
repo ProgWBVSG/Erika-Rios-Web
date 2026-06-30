@@ -1,6 +1,7 @@
 import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
+import NotificationProvider from './components/NotificationProvider'
 
 const NAV = [
   { href: '/admin/dashboard/overview',     label: 'Resumen' },
@@ -61,6 +62,8 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
         {children}
       </main>
+
+      <NotificationProvider />
     </div>
   )
 }
