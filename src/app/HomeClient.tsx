@@ -26,7 +26,11 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
     return () => clearTimeout(timer);
   }, []);
 
-  const c = (key: string, fallback: string) => content[key] || fallback;
+  const c = (key: string, fallback: string) => content[key] || fallback
+  // Renders rich-text HTML stored by Tiptap; falls back to plain text wrapped in a <p>
+  const rhtml = (key: string, fallback: string) => ({
+    __html: content[key] || `<p>${fallback}</p>`,
+  });
 
   const faqs = [
     {
@@ -117,9 +121,10 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
               {c('hero_title', 'Liderazgo audaz y consciencia evolutiva.')}
             </h1>
 
-            <p className="text-lg text-stone-600 mb-10 leading-relaxed max-w-lg">
-              {c('hero_subtitle', 'Te acompaño a trascender tus límites, explorar tu autenticidad y liderar desde tu ser más elevado. Un espacio para quienes buscan una transformación real.')}
-            </p>
+            <div
+              className="text-lg text-stone-600 mb-10 leading-relaxed max-w-lg [&_p]:mb-2 [&_p:last-child]:mb-0"
+              dangerouslySetInnerHTML={rhtml('hero_subtitle', 'Te acompaño a trascender tus límites, explorar tu autenticidad y liderar desde tu ser más elevado. Un espacio para quienes buscan una transformación real.')}
+            />
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#contacto" className="flex items-center justify-center gap-2 bg-brand-olive-dark text-white px-8 py-4 rounded-full font-medium hover:bg-brand-olive transition-colors">
@@ -170,12 +175,12 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
             <span className="text-brand-taupe-dark font-medium tracking-widest uppercase text-sm mb-4 block">Sobre mí</span>
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-brand-olive-900 tracking-tight">Bienvenida consciencia</h2>
             <div className="space-y-6 text-lg text-stone-600 leading-relaxed">
-              <p>{c('about_bio_1', 'Soy Erika Rios, creadora de Bienvenida Consciencia. Mi enfoque es disruptivo y está orientado a acompañar a quienes buscan trascender sus límites y explorar su autenticidad.')}</p>
-              <p>{c('about_bio_2', 'Combino coaching, mentorías y talleres de aprendizaje para acompañar a la industria de personas que asisten a otros. Líderes y profesionales en procesos de transformación profunda, reconectándolos con su esencia.')}</p>
-              <p>{c('about_bio_3', 'Mi propuesta es clara: fomentar un liderazgo audaz. Desafiar lo establecido, tomar decisiones desde la intuición y animarse a liderar sin miedo a transformarse a uno mismo.')}</p>
+              <div className="[&_p]:mb-2 [&_p:last-child]:mb-0" dangerouslySetInnerHTML={rhtml('about_bio_1', 'Soy Erika Rios, creadora de Bienvenida Consciencia. Mi enfoque es disruptivo y está orientado a acompañar a quienes buscan trascender sus límites y explorar su autenticidad.')} />
+              <div className="[&_p]:mb-2 [&_p:last-child]:mb-0" dangerouslySetInnerHTML={rhtml('about_bio_2', 'Combino coaching, mentorías y talleres de aprendizaje para acompañar a la industria de personas que asisten a otros. Líderes y profesionales en procesos de transformación profunda, reconectándolos con su esencia.')} />
+              <div className="[&_p]:mb-2 [&_p:last-child]:mb-0" dangerouslySetInnerHTML={rhtml('about_bio_3', 'Mi propuesta es clara: fomentar un liderazgo audaz. Desafiar lo establecido, tomar decisiones desde la intuición y animarse a liderar sin miedo a transformarse a uno mismo.')} />
 
               <blockquote className="border-l-4 border-brand-taupe pl-6 my-8 py-2">
-                <p className="text-xl text-brand-olive-dark font-serif italic mb-2">&quot;{c('about_quote', 'El impacto genuino no nace de la fuerza, sino de la presencia. Suelta la carga de controlarlo todo, enciende tu luz y transfórmate en la inspiración que tu entorno necesita hoy.')}&quot;</p>
+                <div className="text-xl text-brand-olive-dark font-serif italic mb-2 [&_p]:mb-0 before:content-['“'] after:content-['”']" dangerouslySetInnerHTML={rhtml('about_quote', 'El impacto genuino no nace de la fuerza, sino de la presencia. Suelta la carga de controlarlo todo, enciende tu luz y transfórmate en la inspiración que tu entorno necesita hoy.')} />
                 <footer className="text-sm font-bold text-stone-500">— Erika Rios</footer>
               </blockquote>
 
@@ -211,8 +216,8 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
             className="text-center max-w-3xl mx-auto mb-20"
           >
             <span className="text-brand-taupe font-medium tracking-widest uppercase text-sm mb-4 block">Mi Trabajo</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Desde tu ser, transforma lo complejo en algo simple.</h2>
-            <p className="text-stone-400 text-lg">Diseño espacios de reflexión, aprendizaje y evolución para que puedas construir tu camino con claridad y propósito.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">{c('services_heading', 'Desde tu ser, transforma lo complejo en algo simple.')}</h2>
+            <div className="text-stone-400 text-lg [&_p]:mb-1 [&_p:last-child]:mb-0" dangerouslySetInnerHTML={rhtml('services_subheading', 'Diseño espacios de reflexión, aprendizaje y evolución para que puedas construir tu camino con claridad y propósito.')} />
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -225,7 +230,7 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
             >
               <Compass className="w-10 h-10 text-brand-taupe mb-6" />
               <h3 className="text-2xl font-bold mb-4">Mentorías</h3>
-              <p className="text-stone-400 mb-8 flex-grow">Acompañamiento grupal o personalizado en módulos profundos. Un espacio íntimo para escucharte y organizar tu verdad.</p>
+              <div className="text-stone-400 mb-8 flex-grow [&_p]:mb-1 [&_p:last-child]:mb-0" dangerouslySetInnerHTML={rhtml('mentorias_desc', 'Acompañamiento grupal o personalizado en módulos profundos. Un espacio íntimo para escucharte y organizar tu verdad.')} />
               <Link href="/mentorias" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors">
                 Consultar mentorías <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -240,7 +245,7 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
             >
               <Sparkles className="w-10 h-10 text-brand-taupe mb-6" />
               <h3 className="text-2xl font-bold mb-4">Experiencias de Bienestar</h3>
-              <p className="text-stone-400 mb-8 flex-grow">Desayunos y Meriendas propósito, tertulia entre colegas: "El arte de envejecer", jornadas al aire libre. Pausamos para reflexionar y volver a uno mismo siendo parte fundamental de un sistema.</p>
+              <div className="text-stone-400 mb-8 flex-grow [&_p]:mb-1 [&_p:last-child]:mb-0" dangerouslySetInnerHTML={rhtml('bienestar_desc', 'Desayunos y Meriendas propósito, tertulia entre colegas: "El arte de envejecer", jornadas al aire libre. Pausamos para reflexionar y volver a uno mismo siendo parte fundamental de un sistema.')} />
               <Link href="/bienestar" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors">
                 Conocer encuentros <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -255,7 +260,7 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
             >
               <Users className="w-10 h-10 text-brand-taupe mb-6" />
               <h3 className="text-2xl font-bold mb-4">Programas Grupales</h3>
-              <p className="text-stone-400 mb-8 flex-grow">Inmersiones profundas como "Diseña tu Identidad" o "Aprender a Aprender". Fomentamos la escucha activa, la compasión y transformamos el enfoque automático de nuestras vidas.</p>
+              <div className="text-stone-400 mb-8 flex-grow [&_p]:mb-1 [&_p:last-child]:mb-0" dangerouslySetInnerHTML={rhtml('programas_desc', 'Inmersiones profundas como "Diseña tu Identidad" o "Aprender a Aprender". Fomentamos la escucha activa, la compasión y transformamos el enfoque automático de nuestras vidas.')} />
               <Link href="/programas" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors">
                 Ver programas <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -272,7 +277,7 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
             <Heart className="w-10 h-10 text-brand-taupe" />
             <div>
               <h3 className="text-2xl font-bold mb-2">Procesos de Coaching 1 a 1</h3>
-              <p className="text-stone-400">Acompañamiento personalizado para explorar en profundidad aquello que querés desarmar o mirar distinto, al ritmo que necesites y sin fórmulas rígidas.</p>
+              <div className="text-stone-400 [&_p]:mb-1 [&_p:last-child]:mb-0" dangerouslySetInnerHTML={rhtml('coaching_desc', 'Acompañamiento personalizado para explorar en profundidad aquello que querés desarmar o mirar distinto, al ritmo que necesites y sin fórmulas rígidas.')} />
             </div>
             <Link href="/coaching" className="text-brand-taupe font-medium text-sm flex items-center gap-2 w-fit group-hover:text-amber-300 transition-colors whitespace-nowrap">
               Conocer más <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -294,7 +299,7 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
             <span className="text-brand-taupe-dark font-medium tracking-widest uppercase text-sm mb-4 block" id="aprender">Programa Estrella</span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-brand-olive-dark tracking-tight">Aprender a Aprender</h2>
             <p className="text-xl text-stone-600 mb-8 font-serif italic">&quot;Desde tu ser, transforma lo complejo en algo simple.&quot;</p>
-            <p className="text-stone-600 mb-8">{c('program_description', 'Un itinerario profundo de 4 meses diseñado para quienes buscan desaprender viejos patrones y abrazar una nueva forma de ver su vida, fomentando la adaptabilidad, autoconsciencia y el liderazgo evolutivo.')}</p>
+            <div className="text-stone-600 mb-8 [&_p]:mb-2 [&_p:last-child]:mb-0" dangerouslySetInnerHTML={rhtml('program_description', 'Un itinerario profundo de 4 meses diseñado para quienes buscan desaprender viejos patrones y abrazar una nueva forma de ver su vida, fomentando la adaptabilidad, autoconsciencia y el liderazgo evolutivo.')} />
 
             <ul className="space-y-6 mb-10 text-stone-700">
               <li className="flex gap-4">
@@ -357,8 +362,8 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <span className="text-brand-taupe font-medium tracking-widest uppercase text-sm mb-4 block">Arte y Reflexión</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-brand-olive-dark tracking-tight">El lienzo como espejo del alma.</h2>
-            <p className="text-stone-600 text-lg">Un espacio donde el color y la pintura se encuentran con el autodescubrimiento. A través de mis cuadros, capturo y comparto las reflexiones que nacen de cuestionar lo preestablecido.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-brand-olive-dark tracking-tight">{c('arte_title', 'El lienzo como espejo del alma.')}</h2>
+            <div className="text-stone-600 text-lg [&_p]:mb-1 [&_p:last-child]:mb-0" dangerouslySetInnerHTML={rhtml('arte_desc', 'Un espacio donde el color y la pintura se encuentran con el autodescubrimiento. A través de mis cuadros, capturo y comparto las reflexiones que nacen de cuestionar lo preestablecido.')} />
           </motion.div>
 
           {posts.length > 0 ? (
@@ -451,10 +456,11 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
           className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start"
         >
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tight">Empecemos tu proceso.</h2>
-            <p className="text-xl text-stone-400 mb-10 leading-relaxed font-light">
-              Este es un espacio confidencial, sin juicios ni apuros. Si algo de lo que leíste te resonó y sentís que es el momento, escribime. Podemos charlar y ver juntos cuál es tu próximo paso.
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tight">{c('contact_title', 'Empecemos tu proceso.')}</h2>
+            <div
+              className="text-xl text-stone-400 mb-10 leading-relaxed font-light [&_p]:mb-2 [&_p:last-child]:mb-0"
+              dangerouslySetInnerHTML={rhtml('contact_subtitle', 'Este es un espacio confidencial, sin juicios ni apuros. Si algo de lo que leíste te resonó y sentís que es el momento, escribime. Podemos charlar y ver juntos cuál es tu próximo paso.')}
+            />
 
             <div className="space-y-6">
               <a href="https://wa.me/5493572440360?text=Hola%20Erika!%20Estoy%20viendo%20tu%20web%20y%20me%20gustar%C3%ADa%20hacerte%20una%20consulta." target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group p-4 rounded-xl bg-stone-800/50 hover:bg-brand-olive border border-stone-700/50 transition-colors">
