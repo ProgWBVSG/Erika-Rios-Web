@@ -1,7 +1,7 @@
 import { createClient } from '@/utils/supabase/server'
 import Link from 'next/link'
 import { Contact } from '@/types'
-import { deleteContact } from './actions'
+import { DeleteContactButton } from './DeleteContactButton'
 
 const STATUS_LABELS: Record<string, { label: string; color: string }> = {
   nuevo:       { label: 'Nuevo',       color: 'bg-blue-100 text-blue-800' },
@@ -92,16 +92,7 @@ export default async function CRMPage() {
                   >
                     Ver detalle
                   </Link>
-                  <form action={deleteContact}>
-                    <input type="hidden" name="id" value={contact.id} />
-                    <button
-                      type="submit"
-                      className="text-red-600 hover:text-red-900 border border-red-200 rounded px-3 py-1 text-sm bg-red-50"
-                      onClick={e => { if (!confirm('¿Eliminar este contacto?')) e.preventDefault() }}
-                    >
-                      Borrar
-                    </button>
-                  </form>
+                  <DeleteContactButton id={contact.id} />
                 </div>
               </li>
             )
