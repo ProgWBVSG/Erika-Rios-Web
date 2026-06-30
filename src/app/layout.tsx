@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
+import PageTracker from '@/components/PageTracker';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const poppins = Poppins({
@@ -100,6 +101,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-stone-50 text-stone-900`}
       >
+        <PageTracker />
         {children}
       </body>
     </html>

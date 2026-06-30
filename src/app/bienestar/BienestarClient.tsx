@@ -59,7 +59,7 @@ export default function BienestarClient({ services }: { services: Service[] }) {
                                         {svc.modality && <span className="text-brand-taupe-dark bg-brand-taupe-50 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">{svc.modality}</span>}
                                     </div>
                                     <p className="text-stone-600 mb-6 font-light whitespace-pre-wrap">{svc.description}</p>
-                                    <a href={`https://wa.me/5493572440360?text=Hola Erika! Me gustaría saber más sobre ${encodeURIComponent(svc.title)}`} target="_blank" rel="noopener noreferrer" className="text-brand-olive-900 font-medium flex items-center gap-2 text-sm group hover:text-brand-taupe-dark transition-colors">
+                                    <a href={`https://wa.me/5493572440360?text=${encodeURIComponent(`Hola Erika! Me gustaría saber más sobre ${svc.title}`)}`} target="_blank" rel="noopener noreferrer" className="text-brand-olive-900 font-medium flex items-center gap-2 text-sm group hover:text-brand-taupe-dark transition-colors">
                                         Saber más <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </a>
                                 </div>

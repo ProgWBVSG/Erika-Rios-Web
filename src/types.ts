@@ -15,3 +15,23 @@ export interface Testimonial {
   quote: string;
   is_active: boolean;
 }
+
+export interface Post {
+  id: string;
+  title: string;
+  reflection: string;
+  image_url: string;
+  published_at: string;
+  created_at: string;
+}
+
+export interface Contact {
+  id: string;
+  name: string;
+  email: string | null;
+  subject: string | null;
+  message: string | null;
+  status: 'nuevo' | 'contactado' | 'en_proceso' | 'convertido' | 'descartado';
+  notes: string | null;
+  created_at: string;
+}

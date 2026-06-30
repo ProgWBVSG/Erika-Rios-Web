@@ -49,7 +49,7 @@ export default function ProgramasClient({ services }: { services: Service[] }) {
                                         </p>
 
                                         <div className="flex flex-col sm:flex-row gap-4">
-                                            <a href={`https://wa.me/5493572440360?text=Hola Erika! Quiero saber más sobre el programa ${encodeURIComponent(svc.title)}.`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-brand-olive-dark text-white px-8 py-4 rounded-full font-medium hover:bg-brand-olive transition-colors shadow-xl">
+                                            <a href={`https://wa.me/5493572440360?text=${encodeURIComponent(`Hola Erika! Quiero saber más sobre el programa ${svc.title}.`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-brand-olive-dark text-white px-8 py-4 rounded-full font-medium hover:bg-brand-olive transition-colors shadow-xl">
                                                 Quiero inscribirme
                                                 <ArrowRight className="w-4 h-4" />
                                             </a>
