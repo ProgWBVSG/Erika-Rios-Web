@@ -10,6 +10,7 @@ const NAV = [
   { href: '/admin/dashboard/services',     label: 'Servicios' },
   { href: '/admin/dashboard/content',      label: 'Contenido' },
   { href: '/admin/dashboard/testimonials', label: 'Testimonios' },
+  { href: '/admin/dashboard/guide',        label: '📋 Guía' },
 ]
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {

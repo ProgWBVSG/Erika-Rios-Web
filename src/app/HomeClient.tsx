@@ -9,10 +9,11 @@ import { Post } from "@/types";
 
 interface HomeClientProps {
   initialPosts: Post[];
+  initialTestimonials: { author: string; quote: string }[];
   content: Record<string, string>;
 }
 
-export default function HomeClient({ initialPosts, content }: HomeClientProps) {
+export default function HomeClient({ initialPosts, initialTestimonials, content }: HomeClientProps) {
   const [isFaqOpen, setIsFaqOpen] = useState(false);
   const [openQuestionIndex, setOpenQuestionIndex] = useState<number | null>(0);
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
@@ -327,6 +328,11 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
 
             <div className="p-8 bg-white rounded-2xl border border-stone-200 shadow-sm relative overflow-hidden">
               <div className="absolute top-0 left-0 w-2 h-full bg-brand-taupe-500"></div>
+              {/* Urgency badge */}
+              <div className="inline-flex items-center gap-1.5 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                Cupos limitados — quedan pocos lugares
+              </div>
               <p className="font-bold text-brand-olive-900 text-lg mb-2 flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-brand-taupe" />
                 Próxima Edición: {c('program_next_date', '30 de Julio – 20 hs (Arg)')}
@@ -445,6 +451,43 @@ export default function HomeClient({ initialPosts, content }: HomeClientProps) {
           )}
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      {initialTestimonials.length > 0 && (
+        <section className="py-24 bg-brand-olive-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.8 }}
+              className="text-center max-w-2xl mx-auto mb-16"
+            >
+              <span className="text-brand-taupe-dark font-medium tracking-widest uppercase text-sm mb-4 block">Testimonios</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-brand-olive-900 tracking-tight">Lo que dicen quienes ya transitaron el proceso.</h2>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {initialTestimonials.map((t, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.6, delay: i * 0.08 }}
+                  className="bg-white rounded-2xl p-8 shadow-sm border border-stone-100 flex flex-col"
+                >
+                  <div className="text-brand-taupe text-4xl font-serif leading-none mb-4 select-none">&ldquo;</div>
+                  <p className="text-stone-700 leading-relaxed flex-1 italic">{t.quote}</p>
+                  <div className="mt-6 pt-4 border-t border-stone-100">
+                    <p className="font-semibold text-brand-olive-900">{t.author}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Contact Section */}
       <section id="contacto" className="py-24 bg-stone-900 text-stone-50">
